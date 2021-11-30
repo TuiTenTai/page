@@ -36,6 +36,7 @@
   padding: 2rem;
   box-shadow: 0 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.4);
   animation: animatezoom 0.3s ease-out;
+  transition: width 1s;
 }
 
 @-webkit-keyframes animatezoom {
@@ -128,9 +129,8 @@
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .modal-content {
-    transition: 1s;
-    width: 28rem;
+    width: 75vw;
   }
 }

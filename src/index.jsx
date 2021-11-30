@@ -16,6 +16,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("create");
 
+  // Get data from API
   useEffect(() => {
     fetch("https://my-amn-list-server.herokuapp.com/")
       .then((res) => res.json())
@@ -25,6 +26,21 @@ function App() {
       })
       .catch((err) => console.error(err));
   }, []);
+
+  // Rerender data when change
+  useEffect(() => {
+    const contentDivs = document.querySelectorAll(".content-item");
+    var cloneStatus;
+    if (status === "all") cloneStatus = "";
+    else cloneStatus = status;
+
+    for (let i = 0; i < contentDivs.length; i++) {
+      contentDivs[i].classList.remove("show");
+      if (contentDivs[i].className.indexOf(cloneStatus) > -1) {
+        contentDivs[i].classList.add("show");
+      }
+    }
+  }, [data, status]);
 
   return (
     <Fragment>

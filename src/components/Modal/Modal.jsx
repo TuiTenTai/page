@@ -2,7 +2,7 @@ import React from "react";
 import { InputField, ModalButton, SelectField } from "./ModalElements";
 import "./index.css";
 
-function Modal({ setData, setShowModal, type, isShow, data, selectedData }) {
+function Modal({ type, isShow, data, selectedData, setData, setShowModal }) {
   const onOutModalClick = (e) => {
     if (e.target.className !== "modal") return;
     setShowModal(false);
@@ -26,7 +26,6 @@ function Modal({ setData, setShowModal, type, isShow, data, selectedData }) {
       status: document.getElementById("status").value,
     };
 
-    setShowModal(false);
     fetch("https://my-amn-list-server.herokuapp.com/", {
       method: "POST",
       mode: "cors",
@@ -42,6 +41,7 @@ function Modal({ setData, setShowModal, type, isShow, data, selectedData }) {
       .then((res) => res.json())
       .then((json) => setData([json, ...data]))
       .catch((err) => console.error(err));
+    setShowModal(false);
   };
 
   const onEditSubmit = () => {

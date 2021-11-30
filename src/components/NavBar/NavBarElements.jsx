@@ -21,18 +21,6 @@ export function DropButton({ type, setType, status, text, setStatus }) {
   function onHandleClick() {
     setType(type);
     setStatus(status);
-
-    const contentDivs = document.querySelectorAll(".content-item");
-    var cloneStatus;
-    if (status === "all") cloneStatus = "";
-    else cloneStatus = status;
-
-    for (let i = 0; i < contentDivs.length; i++) {
-      contentDivs[i].classList.remove("show");
-      if (contentDivs[i].className.indexOf(cloneStatus) > -1) {
-        contentDivs[i].classList.add("show");
-      }
-    }
   }
 
   return <button onClick={onHandleClick}>{text}</button>;
