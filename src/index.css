@@ -29,7 +29,7 @@ body {
 .drop-down > button,
 .nav-search,
 .content-item,
-.option-icon img {
+.option-icon {
   transition: background-color 0.5s;
 }
 

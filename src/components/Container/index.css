@@ -1,5 +1,5 @@
 .container {
-  width: 60vw;
+  width: 65vw;
   height: 91vh;
   margin: 1vh auto 0 auto;
   padding: 1rem 0;
@@ -13,8 +13,8 @@
 }
 
 .content-item {
-  width: 280px;
-  padding: 1.5rem 0;
+  width: 25%;
+  padding: 1.5rem 0 1rem 0;
   position: relative;
   z-index: 1;
   display: none;
@@ -47,7 +47,7 @@
 .option-icon {
   display: none;
   position: absolute;
-  width: 1.5rem;
+  width: 1.7rem;
   top: 0.5rem;
   right: 0.5rem;
   border-radius: 50%;
@@ -60,7 +60,7 @@
 }
 
 .option-icon:hover {
-  background-color: #a0a0a0c4;
+  background-color: #a0a0a052;
 }
 
 .show {
@@ -81,6 +81,7 @@
   .option-icon {
     top: 0.25rem;
     right: 0.25rem;
+    width: 1rem;
   }
 }
 
