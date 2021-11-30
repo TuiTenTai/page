@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "SourceSansPro";
-  src: url("./fonts/SourceSansPro-Regular.ttf");
+  font-family: "FiraSans";
+  src: url("./fonts/FiraSans-Medium.ttf");
 }
 
 /* ----- Setup ----- */
@@ -14,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SourceSansPro";
+  font-family: "FiraSans";
   user-select: none;
   color: white;
 }
