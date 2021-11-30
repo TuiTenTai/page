@@ -1,0 +1,177 @@
+.nav-bar {
+  background-color: #0f1416;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.brand-title {
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: "PTSerif";
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.caret-down {
+  width: 0.7rem;
+  transition: transform 0.5s ease;
+}
+
+.drop-down {
+  position: relative;
+}
+
+.drop-down button {
+  font-family: "PTSerif";
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.drop-down > button {
+  font-size: 1.2rem;
+  padding: 1.2rem 2rem;
+}
+
+.drop-down.active > button,
+.drop-down > button:hover,
+.drop-menu > button:hover {
+  background-color: #202a2e;
+}
+
+.drop-menu {
+  width: 120%;
+  position: absolute;
+  left: -10%;
+  top: calc(100% + 0.6rem);
+  font-size: 1.7rem;
+  background-color: #1d2427;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transform: translateY(-20px);
+  z-index: 2;
+}
+
+.drop-down.active > button + .drop-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.drop-menu > button {
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  padding: 0.2rem 0.8rem 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+  display: none;
+}
+
+.drop-down.active .caret-down {
+  transform: rotate(180deg);
+}
+
+.toggle-btn:hover {
+  background-color: #b71c1c;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  background-color: #252629c9;
+  border-radius: 2rem;
+  height: 2.5rem;
+  padding: 0.3rem;
+  cursor: text;
+}
+
+.nav-search:hover {
+  background-color: #252629;
+}
+
+.search-form {
+  border: none;
+  outline: none;
+  background: none;
+  width: 10vw;
+  font-size: 1.2rem;
+}
+
+.search-form::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 0.8em;
+  width: 0.8em;
+  border-radius: 50em;
+  background: url("./image/x-cross.png") no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .toggle-btn {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .drop-menu {
+    top: 100%;
+  }
+
+  .nav-search {
+    display: none;
+    width: 98%;
+    margin: 1%;
+  }
+
+  .nav-search input {
+    width: 98%;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .drop-down button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-menu.active,
+  .nav-search.active {
+    display: flex;
+  }
+}

@@ -1,0 +1,54 @@
+/* ----- Import fonts ----- */
+@font-face {
+  font-family: "PTSerif";
+  src: url("./fonts/PTSerif.ttf");
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("./fonts/SourceSansPro-Regular.ttf");
+}
+
+/* ----- Setup ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SourceSansPro";
+  user-select: none;
+  color: white;
+}
+
+body {
+  background-color: #263238;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
+.enable-select {
+  user-select: text;
+}
+
+/* ----- Scroll bar ------ */
+/* width */
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #686868;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}
