@@ -14,7 +14,6 @@
 
 .content-item {
   width: 280px;
-  height: 390px;
   padding: 1.5rem 0;
   position: relative;
   z-index: 1;
@@ -42,7 +41,7 @@
 }
 
 .item-name {
-  font-size: 1.3rem;
+  font-size: clamp(0.8rem, 4vmin, 1.3rem);
 }
 
 .option-icon {
@@ -66,6 +65,23 @@
 
 .show {
   display: block;
+}
+
+@media (max-width: 950px) {
+  .content-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 80vw;
+  }
+
+  .option-icon {
+    top: 0.25rem;
+    right: 0.25rem;
+  }
 }
 
 @media (max-height: 825px) {

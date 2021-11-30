@@ -26,8 +26,11 @@ body {
   max-height: 100vh !important;
 }
 
-.enable-select {
-  user-select: text;
+.drop-down > button,
+.nav-search,
+.content-item,
+.option-icon img {
+  transition: background-color 0.5s;
 }
 
 /* ----- Scroll bar ------ */
