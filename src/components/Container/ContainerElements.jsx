@@ -8,7 +8,7 @@ export function ContentItem({
   setSelectedData,
 }) {
   return (
-    <div className={`content-item ${data.status} show`} id={data._id}>
+    <div className={`content-item ${data.status}`}>
       <a
         href={data.link}
         className="item-link"
