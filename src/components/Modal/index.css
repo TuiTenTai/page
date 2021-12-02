@@ -35,25 +35,16 @@
   width: 37rem;
   padding: 2rem;
   box-shadow: 0 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.4);
-  animation: animatezoom 0.3s ease-out;
+  animation: animatetranslate 0.4s ease-out;
   transition: width 1s;
 }
 
-@-webkit-keyframes animatezoom {
+@keyframes animatetranslate {
   from {
-    -webkit-transform: scale(0);
+    transform: translateY(-75px);
   }
   to {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes animatezoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
+    transform: translateY(0px);
   }
 }
 

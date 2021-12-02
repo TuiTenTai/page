@@ -30,9 +30,7 @@ function App() {
   // Rerender data when change
   useEffect(() => {
     const contentItems = document.querySelectorAll(".content-item");
-    var useStatus;
-    if (status === "all") useStatus = "";
-    else useStatus = status;
+    const useStatus = status === "all" ? "" : status;
 
     contentItems.forEach((item) => {
       item.classList.remove("show");
