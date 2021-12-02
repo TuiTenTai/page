@@ -7,13 +7,13 @@
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
   box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
 }
 
 .content-item {
-  width: 25%;
+  width: 20%;
   height: min-content;
   padding: 1.5rem 0 1rem 0;
   position: relative;
@@ -42,13 +42,13 @@
 }
 
 .item-name {
-  font-size: clamp(0.8rem, 4vmin, 1.3rem);
+  font-size: clamp(0.5rem, 5vmin, 1.3rem);
 }
 
 .option-icon {
   display: none;
   position: absolute;
-  width: 1.7rem;
+  width: 1.5rem;
   top: 0.5rem;
   right: 0.5rem;
   border-radius: 50%;
@@ -68,17 +68,22 @@
   display: block;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
   .content-item {
-    width: 50%;
+    width: 25%;
+  }
+  .container {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-item {
+    width: 33.3%;
   }
 }
 
 @media (max-width: 800px) {
-  .container {
-    width: 80vw;
-  }
-
   .option-icon {
     top: 0.25rem;
     right: 0.25rem;
