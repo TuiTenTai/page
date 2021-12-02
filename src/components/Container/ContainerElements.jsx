@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OptionIconPNG from "./image/option-icon.png";
 
 export function ContentItem({
@@ -7,6 +7,12 @@ export function ContentItem({
   setShowModal,
   setSelectedData,
 }) {
+  // All className 'show' to all .content-item elements
+  useEffect(() => {
+    const contentItems = document.querySelectorAll(".content-item");
+    contentItems.forEach((item) => item.classList.add("show"));
+  }, []);
+
   return (
     <div className={`content-item ${data.status}`}>
       <a

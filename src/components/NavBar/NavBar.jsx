@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   DropDown,
   DropButton,
@@ -8,30 +8,6 @@ import {
 import "./index.css";
 
 function NavBar({ setType, status, setStatus }) {
-  useEffect(() => {
-    document.addEventListener("click", (e) => {
-      const isDropDownBtn =
-        e.target.matches(".drop-down > button") ||
-        e.target.matches(".drop-down img");
-      if (!isDropDownBtn && e.target.closest(".drop-down") != null) return;
-
-      let currentDropDown;
-      if (isDropDownBtn) {
-        currentDropDown = e.target.closest(".drop-down");
-        currentDropDown.classList.toggle("active");
-      }
-
-      document.querySelectorAll(".drop-down.active").forEach((dropdown) => {
-        const dropMenu = dropdown.children[1];
-        dropMenu.onclick = () => {
-          dropdown.classList.remove("active");
-        };
-        if (dropdown === currentDropDown) return;
-        dropdown.classList.remove("active");
-      });
-    });
-  }, []);
-
   return (
     <div className="nav-bar">
       <div className="brand-title">My AMN List</div>

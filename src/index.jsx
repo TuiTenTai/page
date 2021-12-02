@@ -29,17 +29,17 @@ function App() {
 
   // Rerender data when change
   useEffect(() => {
-    const contentDivs = document.querySelectorAll(".content-item");
-    var cloneStatus;
-    if (status === "all") cloneStatus = "";
-    else cloneStatus = status;
+    const contentItems = document.querySelectorAll(".content-item");
+    var useStatus;
+    if (status === "all") useStatus = "";
+    else useStatus = status;
 
-    for (let i = 0; i < contentDivs.length; i++) {
-      contentDivs[i].classList.remove("show");
-      if (contentDivs[i].className.indexOf(cloneStatus) > -1) {
-        contentDivs[i].classList.add("show");
+    contentItems.forEach((item) => {
+      item.classList.remove("show");
+      if (item.className.indexOf(useStatus) > -1) {
+        item.classList.add("show");
       }
-    }
+    });
   }, [data, status]);
 
   return (
