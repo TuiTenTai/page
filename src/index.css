@@ -1,14 +1,3 @@
-/* ----- Import fonts ----- */
-@font-face {
-  font-family: "PTSerif";
-  src: url("./fonts/PTSerif.ttf");
-}
-
-@font-face {
-  font-family: "FiraSans";
-  src: url("./fonts/FiraSans-Medium.ttf");
-}
-
 /* ----- Setup ----- */
 * {
   margin: 0;
