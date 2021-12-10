@@ -24,13 +24,13 @@ function App() {
 
   // Rerender data when change
   useEffect(() => {
-    const contentItems = document.querySelectorAll(".content-item");
-    const useStatus = status === "all" ? "" : status;
+    const cards = document.querySelectorAll(".card");
+    const statusState = status === "all" ? "" : status;
 
-    contentItems.forEach((item) => {
-      item.classList.remove("show");
-      if (item.className.indexOf(useStatus) > -1) {
-        item.classList.add("show");
+    cards.forEach((card) => {
+      card.classList.remove("show");
+      if (card.className.indexOf(statusState) > -1) {
+        card.classList.add("show");
       }
     });
   }, [data, status]);
