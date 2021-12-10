@@ -5,7 +5,7 @@ import "./index.css";
 function LoadingScreen() {
   return (
     <div className="loading">
-      <img src={LoadingGIF} alt="" style={{ pointerEvents: "none" }} />
+      <img src={LoadingGIF} alt="" />
     </div>
   );
 }
