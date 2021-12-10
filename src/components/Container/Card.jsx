@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import OptionIconPNG from "./image/option-icon.png";
 
-export function Card({ data, setModalType, setShowModal, setSelectedData }) {
+const Card = ({ data, setModalType, setShowModal, setSelectedData }) => {
   // All className 'show' to all .card elements
   useEffect(() => {
     const cards = document.querySelectorAll(".card");
@@ -33,4 +33,6 @@ export function Card({ data, setModalType, setShowModal, setSelectedData }) {
       </div>
     </div>
   );
-}
+};
+
+export default Card;

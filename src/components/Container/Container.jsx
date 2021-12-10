@@ -1,14 +1,14 @@
 import React from "react";
-import { Card } from "./ContainerElements";
+import Card from "./Card";
 import "./index.css";
 
-function Container({
+const Container = ({
   data,
   type,
   setModalType,
   setShowModal,
   setSelectedData,
-}) {
+}) => {
   const newData = [...data].filter((item) => item.type === type);
 
   return (
@@ -25,6 +25,6 @@ function Container({
         ))}
     </div>
   );
-}
+};
 
 export default Container;

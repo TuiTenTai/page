@@ -1,9 +1,11 @@
 import React from "react";
-import { InputField, ModalButton, SelectField } from "./ModalElements";
+import InputField from "./InputField";
+import SelectField from "./SelectField";
+import ModalButton from "./ModalButton";
 import "./index.css";
 import { addData, deleteData, updateData } from "../../api";
 
-function Modal({ type, isShow, data, selectedData, setData, setShowModal }) {
+const Modal = ({ type, isShow, data, selectedData, setData, setShowModal }) => {
   const onOutModalClick = (e) => {
     if (e.target.className !== "modal") return;
     setShowModal(false);
@@ -119,6 +121,6 @@ function Modal({ type, isShow, data, selectedData, setData, setShowModal }) {
       )}
     </>
   );
-}
+};
 
 export default Modal;

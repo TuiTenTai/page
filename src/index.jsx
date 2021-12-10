@@ -8,8 +8,8 @@ import Modal from "./components/Modal/Modal";
 import "./index.css";
 import { getData } from "./api";
 
-function App() {
-  const [loding, setLoding] = useState(true);
+const App = () => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [type, setType] = useState("anime");
   const [status, setStatus] = useState("all");
@@ -19,7 +19,7 @@ function App() {
 
   // Get data from API
   useEffect(() => {
-    getData(setData, setLoding);
+    getData(setData, setLoading);
   }, []);
 
   // Rerender data when change
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <Fragment>
-      {loding ? (
+      {loading ? (
         <LoadingScreen />
       ) : (
         <Fragment>
@@ -66,6 +66,6 @@ function App() {
       )}
     </Fragment>
   );
-}
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));
