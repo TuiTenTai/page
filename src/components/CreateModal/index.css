@@ -3,11 +3,12 @@
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 1;
+  cursor: pointer;
 }
 
 .add-new img {
   width: 3.5rem;
   border-radius: 50%;
-  cursor: pointer;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }

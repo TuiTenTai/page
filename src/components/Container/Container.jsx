@@ -1,5 +1,5 @@
 import React from "react";
-import { ContentItem } from "./ContainerElements";
+import { Card } from "./ContainerElements";
 import "./index.css";
 
 function Container({
@@ -15,7 +15,7 @@ function Container({
     <div className="container">
       {newData.lenght !== 0 &&
         newData.map((dataItem) => (
-          <ContentItem
+          <Card
             key={dataItem._id}
             data={dataItem}
             setModalType={setModalType}

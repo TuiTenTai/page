@@ -8,59 +8,73 @@
   overflow-y: auto;
   display: flex;
   justify-content: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
   box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
 }
 
-.content-item {
+.card {
   width: 20%;
-  height: min-content;
   padding: 1.5rem 0 1rem 0;
   position: relative;
   z-index: 1;
   display: none;
 }
 
-.content-item:hover {
+.card:hover {
   background-color: #263238c4;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.item-img {
+.card-img {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-bottom: 0.5rem;
+  pointer-events: none;
 }
 
-.item-link {
+.card-link {
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   z-index: 1;
 }
 
-.item-name {
-  font-size: clamp(0.5rem, 5vmin, 1.3rem);
+.card-name {
+  text-align: center;
+  width: calc(95%);
+  font-size: clamp(0.3rem, 3vmin, 1.2rem);
+  text-overflow: ellipsis;
 }
 
-.option-icon {
+.option {
   display: none;
-  position: absolute;
   width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  cursor: pointer;
+  padding: 0.2rem;
   top: 0.5rem;
   right: 0.5rem;
   border-radius: 50%;
-  cursor: pointer;
-  padding: 0.2rem;
 }
 
-.content-item:hover .option-icon {
-  display: block;
+.option-icon {
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
 }
 
-.option-icon:hover {
+.card:hover .option {
+  display: flex;
+  justify-content: center;
+  align-cards: center;
+}
+
+.option:hover {
   background-color: #a0a0a052;
 }
 
@@ -69,7 +83,7 @@
 }
 
 @media (max-width: 1250px) {
-  .content-item {
+  .card {
     width: 25%;
   }
   .container {
@@ -78,7 +92,7 @@
 }
 
 @media (max-width: 900px) {
-  .content-item {
+  .card {
     width: 33.3%;
   }
 }

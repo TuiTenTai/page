@@ -1,6 +1,7 @@
 import React from "react";
 import { InputField, ModalButton, SelectField } from "./ModalElements";
 import "./index.css";
+import { addData, deleteData, updateData } from "../../api";
 
 function Modal({ type, isShow, data, selectedData, setData, setShowModal }) {
   const onOutModalClick = (e) => {
@@ -26,21 +27,7 @@ function Modal({ type, isShow, data, selectedData, setData, setShowModal }) {
       status: document.getElementById("status").value,
     };
 
-    fetch("https://my-amn-list-server.herokuapp.com/", {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify(newData),
-    })
-      .then((res) => res.json())
-      .then((json) => setData([json, ...data]))
-      .catch((err) => console.error(err));
+    addData(data, newData, setData);
     setShowModal(false);
   };
 
@@ -63,48 +50,13 @@ function Modal({ type, isShow, data, selectedData, setData, setShowModal }) {
       status: document.getElementById("status").value,
       __v: selectedData.__v,
     };
-    fetch("https://my-amn-list-server.herokuapp.com/", {
-      method: "PUT",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify(editData),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        const newData = [...data];
-        newData[newData.indexOf(selectedData)] = json;
-        setData(newData);
-      })
-      .catch((err) => console.error(err));
 
+    updateData(data, editData, selectedData, setData);
     setShowModal(false);
   };
 
   const onDeleteSubmit = () => {
-    fetch("https://my-amn-list-server.herokuapp.com/", {
-      method: "DELETE",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify({ _id: selectedData._id }),
-    })
-      .then(() => {
-        const newData = [...data];
-        newData.splice(newData.indexOf(selectedData), 1);
-        setData(newData);
-      })
-      .catch((err) => console.error(err));
+    deleteData(data, selectedData, setData);
     setShowModal(false);
   };
 

@@ -8,9 +8,13 @@
 }
 
 .brand-title {
+  display: flex;
+  align-items: center;
+  height: 10px;
   padding: 1rem;
+  box-sizing: border-box;
   font-size: 2rem;
-  font-family: "PTSerif";
+  font-family: "BillionDreams";
 }
 
 .nav-menu {
@@ -19,6 +23,7 @@
 
 .caret-down {
   width: 0.7rem;
+  pointer-events: none;
   transition: transform 0.5s ease;
 }
 
@@ -32,9 +37,6 @@
   background: none;
   cursor: pointer;
   border-radius: 0.25rem;
-}
-
-.drop-down > button {
   font-size: 1.2rem;
   padding: 1.2rem 2rem;
 }
@@ -49,7 +51,7 @@
   width: 120%;
   position: absolute;
   left: -10%;
-  top: calc(100% + 0.6rem);
+  top: calc(100% + 0.4rem);
   font-size: 1.7rem;
   background-color: #1d2427;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
@@ -114,7 +116,7 @@
   border: none;
   outline: none;
   background: none;
-  width: 10vw;
+  width: 13vw;
   font-size: 1.2rem;
 }
 
@@ -131,6 +133,7 @@
 
 .search-icon {
   width: 1.5rem;
+  pointer-events: none;
 }
 
 /* Responsive */

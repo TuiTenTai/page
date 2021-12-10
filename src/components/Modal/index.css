@@ -41,7 +41,7 @@
 
 @keyframes animatetranslate {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
   to {
     transform: translateY(0);

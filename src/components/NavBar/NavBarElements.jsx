@@ -58,21 +58,21 @@ export function NavSearch({ status }) {
     const inputValue = document
       .querySelector(".search-form")
       .value.toLowerCase();
-    const itemNames = document.querySelectorAll(".item-name");
+    const cardNames = document.querySelectorAll(".card-name");
 
-    itemNames.forEach((itemName) => {
-      const contentItem = itemName.parentElement.parentElement;
+    cardNames.forEach((cardName) => {
+      const cardContainer = cardName.parentElement.parentElement;
       if (
-        !itemName.innerHTML.toLowerCase().includes(inputValue) &&
-        contentItem.className.includes("show")
+        !cardName.innerHTML.toLowerCase().includes(inputValue) &&
+        cardContainer.className.includes("show")
       )
-        contentItem.classList.remove("show");
+        cardContainer.classList.remove("show");
       else if (
-        itemName.innerHTML.toLowerCase().includes(inputValue) &&
-        !contentItem.className.includes("show") &&
-        (contentItem.className.includes(status) || status === "all")
+        cardName.innerHTML.toLowerCase().includes(inputValue) &&
+        !cardContainer.className.includes("show") &&
+        (cardContainer.className.includes(status) || status === "all")
       )
-        contentItem.classList.add("show");
+        cardContainer.classList.add("show");
     });
   };
 

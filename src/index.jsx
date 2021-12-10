@@ -6,6 +6,7 @@ import Container from "./components/Container/Container";
 import CreateModal from "./components/CreateModal/CreateModal";
 import Modal from "./components/Modal/Modal";
 import "./index.css";
+import { getData } from "./api";
 
 function App() {
   const [loding, setLoding] = useState(true);
@@ -18,13 +19,7 @@ function App() {
 
   // Get data from API
   useEffect(() => {
-    fetch("https://my-amn-list-server.herokuapp.com/")
-      .then((res) => res.json())
-      .then((resData) => {
-        setData(resData.reverse());
-        setLoding(false);
-      })
-      .catch((err) => console.error(err));
+    getData(setData, setLoding);
   }, []);
 
   // Rerender data when change
