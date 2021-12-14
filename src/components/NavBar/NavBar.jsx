@@ -22,7 +22,7 @@ const novelTextContent = {
   viewed: "Read",
 };
 
-const NavBar = ({ setType, status, setStatus }) => {
+const NavBar = ({ setType, status, setStatus, setSearchInput }) => {
   return (
     <div className="nav-bar">
       <div className="brand-title">My AMN List</div>
@@ -43,7 +43,12 @@ const NavBar = ({ setType, status, setStatus }) => {
           setStatus={setStatus}
         />
       </div>
-      <SearchBar status={status} setType={setType} setStatus={setStatus} />
+      <SearchBar
+        status={status}
+        setType={setType}
+        setStatus={setStatus}
+        setSearchInput={setSearchInput}
+      />
       <ToggleButton />
     </div>
   );

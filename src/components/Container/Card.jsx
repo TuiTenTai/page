@@ -1,15 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import OptionIconPNG from "./image/option-icon.png";
 
 const Card = ({ data, setModalType, setShowModal, setSelectedData }) => {
-  // All className 'show' to all .card elements
-  useEffect(() => {
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card) => card.classList.add("show"));
-  }, []);
-
   return (
-    <div className={`card ${data.status}`}>
+    <div className="card">
       <a
         href={data.link}
         className="card-link"

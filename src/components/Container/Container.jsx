@@ -5,6 +5,8 @@ import "./index.css";
 const Container = ({
   data,
   type,
+  status,
+  searchInput,
   setModalType,
   setShowModal,
   setSelectedData,
@@ -14,15 +16,22 @@ const Container = ({
   return (
     <div className="container">
       {newData.lenght !== 0 &&
-        newData.map((dataItem) => (
-          <Card
-            key={dataItem._id}
-            data={dataItem}
-            setModalType={setModalType}
-            setShowModal={setShowModal}
-            setSelectedData={setSelectedData}
-          />
-        ))}
+        newData
+          .filter((data) => status === "all" || data.status === status)
+          .filter(
+            (data) =>
+              searchInput === "" ||
+              data.name.toLowerCase().includes(searchInput)
+          )
+          .map((data) => (
+            <Card
+              key={data._id}
+              data={data}
+              setModalType={setModalType}
+              setShowModal={setShowModal}
+              setSelectedData={setSelectedData}
+            />
+          ))}
     </div>
   );
 };

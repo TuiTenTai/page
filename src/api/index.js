@@ -1,3 +1,4 @@
+// const API_URL = "http://localhost:5000";
 const API_URL = "https://my-amn-list-server.herokuapp.com/";
 
 export const getData = (setData, setLoading = (bool) => null) => {

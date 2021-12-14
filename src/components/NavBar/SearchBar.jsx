@@ -1,7 +1,7 @@
 import React from "react";
 import SearchIconPNG from "./image/search-icon.png";
 
-const SearchBar = ({ status }) => {
+const SearchBar = ({ status, setSearchInput }) => {
   const onHandleClick = () => {
     const inputForm = document.querySelector(".search-form");
     inputForm.focus();
@@ -11,22 +11,7 @@ const SearchBar = ({ status }) => {
     const inputValue = document
       .querySelector(".search-form")
       .value.toLowerCase();
-    const cardNames = document.querySelectorAll(".card-name");
-
-    cardNames.forEach((cardName) => {
-      const cardContainer = cardName.parentElement.parentElement;
-      if (
-        !cardName.innerHTML.toLowerCase().includes(inputValue) &&
-        cardContainer.className.includes("show")
-      )
-        cardContainer.classList.remove("show");
-      else if (
-        cardName.innerHTML.toLowerCase().includes(inputValue) &&
-        !cardContainer.className.includes("show") &&
-        (cardContainer.className.includes(status) || status === "all")
-      )
-        cardContainer.classList.add("show");
-    });
+    setSearchInput(inputValue);
   };
 
   return (

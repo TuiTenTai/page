@@ -14,6 +14,7 @@ const App = () => {
   const [type, setType] = useState("anime");
   const [status, setStatus] = useState("all");
   const [selectedData, setSelectedData] = useState({});
+  const [searchInput, setSearchInput] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("create");
 
@@ -22,29 +23,23 @@ const App = () => {
     getData(setData, setLoading);
   }, []);
 
-  // Rerender data when change
-  useEffect(() => {
-    const cards = document.querySelectorAll(".card");
-    const statusState = status === "all" ? "" : status;
-
-    cards.forEach((card) => {
-      card.classList.remove("show");
-      if (card.className.indexOf(statusState) > -1) {
-        card.classList.add("show");
-      }
-    });
-  }, [data, status]);
-
   return (
     <Fragment>
       {loading ? (
         <LoadingScreen />
       ) : (
         <Fragment>
-          <NavBar setType={setType} status={status} setStatus={setStatus} />
+          <NavBar
+            setType={setType}
+            status={status}
+            setStatus={setStatus}
+            setSearchInput={setSearchInput}
+          />
           <Container
             data={data}
             type={type}
+            status={status}
+            searchInput={searchInput}
             setModalType={setModalType}
             setShowModal={setShowModal}
             setSelectedData={setSelectedData}
