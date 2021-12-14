@@ -43,12 +43,7 @@ const NavBar = ({ setType, status, setStatus, setSearchInput }) => {
           setStatus={setStatus}
         />
       </div>
-      <SearchBar
-        status={status}
-        setType={setType}
-        setStatus={setStatus}
-        setSearchInput={setSearchInput}
-      />
+      <SearchBar setSearchInput={setSearchInput} />
       <ToggleButton />
     </div>
   );

@@ -1,16 +1,14 @@
 import React from "react";
 import SearchIconPNG from "./media/search-icon.png";
 
-const SearchBar = ({ status, setSearchInput }) => {
+const SearchBar = ({ setSearchInput }) => {
   const onHandleClick = () => {
     const inputForm = document.querySelector(".search-form");
     inputForm.focus();
   };
 
-  const onHandleChange = () => {
-    const inputValue = document
-      .querySelector(".search-form")
-      .value.toLowerCase();
+  const onHandleChange = (e) => {
+    const inputValue = e.target.value.toLowerCase();
     setSearchInput(inputValue);
   };
 
