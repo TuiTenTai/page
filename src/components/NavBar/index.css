@@ -125,7 +125,7 @@
   height: 0.8em;
   width: 0.8em;
   border-radius: 50em;
-  background: url("./image/x-cross.png") no-repeat 50% 50%;
+  background: url("./media/x-cross.png") no-repeat 50% 50%;
   background-size: contain;
   opacity: 1;
   cursor: pointer;
