@@ -11,7 +11,7 @@ const Container = ({
   setShowModal,
   setSelectedData,
 }) => {
-  const filterData = [...data]
+  const filterData = data
     .filter((data) => data.type === type)
     .filter((data) => status === "all" || data.status === status)
     .filter(

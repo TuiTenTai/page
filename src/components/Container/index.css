@@ -13,14 +13,14 @@
   box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
 }
 
-.card {
+.item-card {
   width: 20%;
   padding: 1.5rem 0 1rem 0;
   position: relative;
   z-index: 1;
 }
 
-.card:hover {
+.item-card:hover {
   background-color: #263238c4;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -67,10 +67,10 @@
   pointer-events: none;
 }
 
-.card:hover .option {
+.item-card:hover .option {
   display: flex;
   justify-content: center;
-  align-cards: center;
+  align-items: center;
 }
 
 .option:hover {

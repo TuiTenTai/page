@@ -1,5 +1,5 @@
 import React from "react";
-import AddNewIconPNG from "./image/add-new.png";
+import AddNewIconPNG from "./add-new.png";
 import "./index.css";
 
 const CreateModal = ({ setShowModal, setModalType, setSelectedData }) => {

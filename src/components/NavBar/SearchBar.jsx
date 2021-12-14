@@ -1,5 +1,5 @@
 import React from "react";
-import SearchIconPNG from "./image/search-icon.png";
+import SearchIconPNG from "./media/search-icon.png";
 
 const SearchBar = ({ status, setSearchInput }) => {
   const onHandleClick = () => {

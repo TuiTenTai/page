@@ -1,9 +1,9 @@
 import React from "react";
-import OptionIconPNG from "./image/option-icon.png";
+import OptionIconPNG from "./option-icon.png";
 
 const Card = ({ data, setModalType, setShowModal, setSelectedData }) => {
   return (
-    <div className="card">
+    <div className="item-card">
       <a
         href={data.link}
         className="card-link"
@@ -14,16 +14,14 @@ const Card = ({ data, setModalType, setShowModal, setSelectedData }) => {
         <p className="card-name">{data.name}</p>
       </a>
       <div
-        className="option-button"
+        className="option"
         onClick={() => {
           setSelectedData(data);
           setModalType("update");
           setShowModal(true);
         }}
       >
-        <div className="option">
-          <img src={OptionIconPNG} alt="" className="option-icon" />
-        </div>
+        <img src={OptionIconPNG} alt="" className="option-icon" />
       </div>
     </div>
   );

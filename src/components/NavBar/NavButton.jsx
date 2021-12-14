@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CaretDownPNG from "./image/caret-down.png";
+import CaretDownPNG from "./media/caret-down.png";
 
 const DropButton = ({ type, setType, text, setStatus, status }) => {
   const onHandleClick = () => {
