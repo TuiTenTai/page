@@ -79,7 +79,7 @@
 }
 
 @media (max-width: 1250px) {
-  .card {
+  .item-card {
     width: 25%;
   }
   .container {
@@ -88,7 +88,7 @@
 }
 
 @media (max-width: 900px) {
-  .card {
+  .item-card {
     width: 33.3%;
   }
 }
