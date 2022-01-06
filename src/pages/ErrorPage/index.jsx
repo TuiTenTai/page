@@ -1,7 +1,9 @@
 import React from "react";
 import { styled } from "@mui/material";
+import SlideBar from "components/SlideBar";
 
 const ErrorText = styled("p")`
+  width: max-content;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -12,7 +14,12 @@ const ErrorText = styled("p")`
 `;
 
 const NotFound = ({ errMess }) => {
-  return <ErrorText>{errMess}</ErrorText>;
+  return (
+    <>
+      <SlideBar />
+      <ErrorText>{errMess}</ErrorText>
+    </>
+  );
 };
 
 export default NotFound;

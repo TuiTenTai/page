@@ -22,7 +22,7 @@ const SearchField = ({ fullWidth = false }) => {
       defaultValue={searchFilterState}
       fullWidth={fullWidth}
       onChange={handleChange}
-      sx={!fullWidth && { width: "20rem" }}
+      sx={!fullWidth ? { width: "20rem" } : {}}
     />
   );
 };
