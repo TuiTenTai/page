@@ -34,7 +34,7 @@ const SlideBar = () => {
             <MenuIcon fontSize="inherit" />
           </BarOpenButton>
           <Bar anchor="left" open={isOpen} onClose={handleClick}>
-            <List>
+            <List sx={{ width: "10rem" }}>
               {barAction.map((item) => (
                 <SlideButton
                   key={item.text}

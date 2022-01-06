@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchSelector } from "reducers/filter";
 import { searchChange } from "actions/filter";
-import TextField from "@mui/material/TextField";
+import { Search } from "styles/Search";
 
 const SearchField = ({ fullWidth = false }) => {
   const searchFilterState = useSelector(searchSelector);
@@ -14,7 +14,7 @@ const SearchField = ({ fullWidth = false }) => {
   };
 
   return (
-    <TextField
+    <Search
       type="search"
       size="small"
       variant="outlined"
