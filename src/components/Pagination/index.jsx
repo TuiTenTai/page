@@ -1,7 +1,6 @@
 import React from "react";
 import { itemPerPage } from "constant";
-import { PaginationBox } from "styles/Pagination";
-import MuiPagination from "@mui/material/Pagination";
+import { PaginationBox, PaginationBar } from "styles/Pagination";
 
 const Pagination = ({ list, setPageCount }) => {
   const count = Math.floor(list.length / itemPerPage) + 1;
@@ -14,8 +13,7 @@ const Pagination = ({ list, setPageCount }) => {
     <>
       {list.length !== 0 && (
         <PaginationBox>
-          <MuiPagination
-            sx={{ color: "white" }}
+          <PaginationBar
             variant="outlined"
             color="primary"
             count={count}

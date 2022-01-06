@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Pagination from "@mui/material/Pagination";
 
 export const PaginationBox = styled(Box)`
-  margin-top: 1rem;
+  margin: 1rem 0;
   display: flex;
   justify-content: center;
 `;
