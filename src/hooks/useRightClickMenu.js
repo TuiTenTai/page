@@ -18,13 +18,13 @@ const useRightMenu = () => {
   const handleContextMenu = useCallback(
     (e) => {
       try {
-        if (e.target.parentNode.classList.contains("MuiLink-root")) {
+        if (e.target.closest(".MuiLink-root")) {
           e.preventDefault();
           setX(e.pageX + 100 > window.innerWidth ? e.pageX - 100 : e.pageX);
           setY(e.pageY + 85 > window.innerHeight ? e.pageY - 75 : e.pageY);
           setIsShow(true);
 
-          const itemName = e.target.childNodes[0].innerText;
+          const itemName = e.target.closest(".card-name").innerText;
           const itemData = dataState.filter(
             (item) => item.name === itemName
           )[0];
