@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { formContentSelector } from "reducers/form";
 import { changeContentValue } from "actions/form";
-import { TextField } from "styles/Modal";
+import { TextField } from "styles/FormModal";
 
 const ModalTextField = ({ text }) => {
   const formContentState = useSelector(formContentSelector);

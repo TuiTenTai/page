@@ -1,7 +1,7 @@
 import HomeIcon from "@mui/icons-material/Home";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import ChromeReaderModeIcon from "@mui/icons-material/ChromeReaderMode";
+import BookIcon from "@mui/icons-material/Book";
 
 export const statusList = ["viewing", "later", "viewed"];
 export const typeList = ["anime", "manga", "novel"];
@@ -24,7 +24,7 @@ export const barAction = [
   },
   {
     to: "/novel",
-    icon: <ChromeReaderModeIcon />,
+    icon: <BookIcon />,
     text: "Novel",
   },
 ];

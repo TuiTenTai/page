@@ -6,7 +6,7 @@ import { changeContentValue } from "actions/form";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import { Select } from "styles/Modal";
+import { Select } from "styles/FormModal";
 
 const ModalSelect = ({ type, values, defaultValue }) => {
   const formContentState = useSelector(formContentSelector);

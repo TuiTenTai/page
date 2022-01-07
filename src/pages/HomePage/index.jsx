@@ -3,6 +3,7 @@ import { styled } from "@mui/system";
 import Typical from "react-typical";
 
 const StyledTypical = styled(Typical)`
+  width: max-content;
   position: fixed;
   top: 50%;
   left: 50%;

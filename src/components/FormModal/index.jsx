@@ -13,7 +13,7 @@ import {
   ModalTitle,
   ModalContentGroup,
   ModalButtonGroup,
-} from "styles/Modal";
+} from "styles/FormModal";
 import ModalSelect from "./ModalSelect";
 import ModalTextField from "./ModalTextField";
 import ModalButton from "./ModalButton";

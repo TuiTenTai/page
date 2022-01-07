@@ -6,7 +6,7 @@ import MuiSelect from "@mui/material/Select";
 
 /* Container */
 export const ModalBox = styled(Box)`
-  background-color: #1f1f1f;
+  background-color: #212529;
   border-radius: 1px;
   padding: 1.75rem 1.75rem 1rem 1.75rem;
   width: calc(12% + 12rem);

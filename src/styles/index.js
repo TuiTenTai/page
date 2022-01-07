@@ -63,12 +63,12 @@ export default createGlobalStyle`
     overflow-x: hidden;
     overflow-y: auto;
     background-image: linear-gradient(
-      to left top, 
-      #0f0f0f, 
-      #191919, 
-      #232323, 
-      #2d2d2d, 
-      #373737
+      to right top, 
+      #dee2e6, 
+      #dadee3, 
+      #d6dbe0, 
+      #d2d7dd, 
+      #ced4da
     );
   }
 

@@ -26,7 +26,7 @@ export const TopButton = styled(Button)`
   padding: 1rem 1.5rem;
 
   &:hover {
-    background-color: rgba(66, 66, 66, 0.5);
+    background-color: rgba(222, 226, 230, 0.2);
   }
 `;
 
@@ -35,10 +35,10 @@ export const DropMenu = styled(({ className, ...props }) => (
   <Tooltip {...props} componentsProps={{ tooltip: { className: className } }} />
 ))`
   .MuiTooltip-arrow {
-    color: #404040;
+    color: #dee2e6;
   }
 
-  background-color: #404040;
+  background-color: #dee2e6;
 `;
 
 export const DropButton = styled(Button)`

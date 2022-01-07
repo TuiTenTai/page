@@ -15,7 +15,6 @@ const Pagination = ({ list, setPageCount }) => {
         <PaginationBox>
           <PaginationBar
             variant="outlined"
-            color="primary"
             count={count}
             onChange={handleChange}
             showFirstButton
