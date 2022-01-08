@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeFormType, reverseIsShowValue } from "actions/form";
 import api from "api";
+import { changeFormType, reverseIsShowValue } from "actions/form";
 import { formContentSelector } from "reducers/form";
 import { deleteData } from "actions/data";
 import Paper from "@mui/material/Paper";
@@ -25,13 +25,13 @@ const RightClickMenu = ({ x, y, isShow }) => {
     dispatch(reverseIsShowValue());
   };
 
-  const handleDelete = () => {
-    api
-      .delete("", { data: { _id: formContentState._id } })
-      .then(() => {
-        dispatch(deleteData(formContentState));
-      })
-      .catch((err) => console.error(err));
+  const handleDelete = async () => {
+    try {
+      await api.delete("", { data: { _id: formContentState._id } });
+      dispatch(deleteData(formContentState));
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (

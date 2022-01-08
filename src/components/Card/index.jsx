@@ -7,7 +7,12 @@ import CardTitle from "./CardTitle";
 
 const Card = ({ content }) => {
   return (
-    <MuiCard sx={{ height: "min-content" }}>
+    <MuiCard
+      sx={{
+        height: "min-content",
+        boxShadow: "0 5px 5px 0 rgba(0, 0, 0, 0.2)",
+      }}
+    >
       <CardActionArea>
         <Link href={content.link} target="_blank" rel="noreferrer">
           <CardMedia

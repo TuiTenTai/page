@@ -26,7 +26,7 @@ export const TopButton = styled(Button)`
   padding: 1rem 1.5rem;
 
   &:hover {
-    background-color: rgba(222, 226, 230, 0.2);
+    background-color: rgba(67, 72, 77, 0.2);
   }
 `;
 

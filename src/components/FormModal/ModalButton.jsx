@@ -29,13 +29,13 @@ const ModalButton = ({ children, bgcolor, handleClose }) => {
     }
   };
 
-  const fetchUpdate = () => {
-    api
-      .put("", JSON.stringify(formContent))
-      .then(() => {
-        dispatch(updateData(formContent));
-      })
-      .catch((err) => console.error(err));
+  const fetchUpdate = async () => {
+    try {
+      await api.put("", JSON.stringify(formContent));
+      dispatch(updateData(formContent));
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleClick = (e) => {

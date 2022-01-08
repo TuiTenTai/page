@@ -6,6 +6,7 @@ export const Search = styled(TextField)`
     color: white;
   }
 
+  .Mui-focused .MuiOutlinedInput-notchedOutline,
   .MuiOutlinedInput-notchedOutline {
     border-color: #fff;
   }

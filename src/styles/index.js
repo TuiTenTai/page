@@ -64,11 +64,18 @@ export default createGlobalStyle`
     overflow-y: auto;
     background-image: linear-gradient(
       to right top, 
-      #dee2e6, 
-      #dadee3, 
-      #d6dbe0, 
-      #d2d7dd, 
-      #ced4da
+      #292929, 
+      #2e2e2f, 
+      #333335, 
+      #38393b, 
+      #3d3e41, 
+      #414347, 
+      #45484d, 
+      #494d53, 
+      #4d5359, 
+      #525960, 
+      #565f66, 
+      #5a656c
     );
   }
 
