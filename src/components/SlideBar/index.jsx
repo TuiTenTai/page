@@ -5,10 +5,8 @@ import { changeIsResponsiveValue } from "actions/responsive";
 import { barAction } from "constant";
 import { Bar, BarOpenButton } from "styles/SlideBar";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import SlideButton from "./SlideButton";
-import SearchField from "components/SearchField";
 
 const SlideBar = () => {
   const isResponsive = useSelector(isResponsiveSelector);
@@ -42,9 +40,6 @@ const SlideBar = () => {
                   handleClick={handleClick}
                 />
               ))}
-              <ListItem>
-                <SearchField fullWidth />
-              </ListItem>
             </List>
           </Bar>
         </>

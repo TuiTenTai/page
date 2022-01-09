@@ -3,20 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import api from "api";
 import { addData, updateData } from "actions/data";
 import { formContentSelector } from "reducers/form";
-import Button from "@mui/material/Button";
+import { Button } from "styles/FormModal";
 
 const ModalButton = ({ children, bgcolor, handleClose }) => {
   const formContent = useSelector(formContentSelector);
   const dispatch = useDispatch();
-  const buttonStyles = {
-    backgroundColor: bgcolor,
-    borderRadius: 0,
-    boxShadow: 0,
-
-    "&:hover": {
-      backgroundColor: bgcolor,
-    },
-  };
 
   const fetchAddNew = async () => {
     try {
@@ -68,7 +59,7 @@ const ModalButton = ({ children, bgcolor, handleClose }) => {
   };
 
   return (
-    <Button variant="contained" sx={buttonStyles} onClick={handleClick}>
+    <Button bgcolor={bgcolor} variant="contained" onClick={handleClick}>
       {children}
     </Button>
   );

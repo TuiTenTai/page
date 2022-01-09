@@ -9,11 +9,11 @@ import MenuItem from "@mui/material/MenuItem";
 import { Select } from "styles/FormModal";
 
 const ModalSelect = ({ type, values, defaultValue }) => {
-  const formContentState = useSelector(formContentSelector);
+  const formContent = useSelector(formContentSelector);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const newFormContent = { ...formContentState };
+    const newFormContent = { ...formContent };
     newFormContent[type.toLowerCase()] = e.target.value;
     dispatch(changeContentValue(newFormContent));
   };

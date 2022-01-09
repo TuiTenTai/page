@@ -21,20 +21,20 @@ import ModalButton from "./ModalButton";
 const textFieldContent = ["Name", "Link", "Image"];
 
 const FormModal = () => {
-  const formContentState = useSelector(formContentSelector);
-  const isShowState = useSelector(isFormShowSelector);
-  const formTypeState = useSelector(formTypeSelector);
+  const formContent = useSelector(formContentSelector);
+  const isShow = useSelector(isFormShowSelector);
+  const formType = useSelector(formTypeSelector);
   const dispatch = useDispatch();
 
   const [defaultTypeValue, setDefaultTypeValue] = useState("");
   const [defaultStatusValue, setDefaultStatusValue] = useState("");
 
   useEffect(() => {
-    if (isShowState) {
-      setDefaultTypeValue(formContentState.type);
-      setDefaultStatusValue(formContentState.status);
+    if (isShow) {
+      setDefaultTypeValue(formContent.type);
+      setDefaultStatusValue(formContent.status);
     }
-  }, [isShowState]); // eslint-disable-line
+  }, [isShow]); // eslint-disable-line
 
   const onHandleClose = () => {
     dispatch(reverseIsShowValue());
@@ -42,10 +42,10 @@ const FormModal = () => {
   };
 
   return (
-    <Modal open={isShowState} onClose={onHandleClose}>
+    <Modal open={isShow} onClose={onHandleClose}>
       <ModalBox>
         <ModalTitle variant="h5">
-          {formTypeState === "add" ? "Add New" : "Edit"}
+          {formType === "add" ? "Add New" : "Edit"}
         </ModalTitle>
         <ModalContentGroup>
           {textFieldContent.map((text) => (
@@ -66,7 +66,7 @@ const FormModal = () => {
         </ModalContentGroup>
         <ModalButtonGroup>
           <ModalButton bgcolor="#1bc421" handleClose={onHandleClose}>
-            {formTypeState}
+            {formType}
           </ModalButton>
           <ModalButton bgcolor="#c41b1b" handleClose={onHandleClose}>
             cancel

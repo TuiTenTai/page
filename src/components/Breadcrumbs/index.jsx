@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { typeSelector, statusSelector } from "reducers/filter";
 import { isResponsiveSelector } from "reducers/responsive";
 import { capitalize } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
@@ -22,14 +21,12 @@ const styleToolBar = {
   justifyContent: "space-between",
 };
 
-const Breadcrumbs = () => {
-  const typeState = useSelector(typeSelector);
-  const statusState = useSelector(statusSelector);
-  const isResponsiveState = useSelector(isResponsiveSelector);
+const Breadcrumbs = ({ type, status }) => {
+  const isResponsive = useSelector(isResponsiveSelector);
 
-  const upCaseType = capitalize(typeState);
-  const upCaseStatus = capitalize(statusState);
-  const path = "/" + typeState + "/" + statusState;
+  const upCaseType = capitalize(type);
+  const upCaseStatus = capitalize(status);
+  const path = "/" + type + "/" + status;
 
   return (
     <AppBar>
@@ -39,12 +36,12 @@ const Breadcrumbs = () => {
             <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Home
           </Link>
-          <Link style={styleLink} to={`/${typeState}`}>
+          <Link style={styleLink} to={`/${type}`}>
             {upCaseType}
           </Link>
           {upCaseStatus !== "All" && <Link to={path}>{upCaseStatus}</Link>}
         </MuiBreadcrumbs>
-        {!isResponsiveState && <SearchField />}
+        {!isResponsive && <SearchField />}
         <SlideBar />
       </Toolbar>
     </AppBar>

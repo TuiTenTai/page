@@ -9,16 +9,8 @@ import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 
 const RightClickMenu = ({ x, y, isShow }) => {
-  const formContentState = useSelector(formContentSelector);
+  const formContent = useSelector(formContentSelector);
   const dispatch = useDispatch();
-
-  const style = {
-    width: "100px",
-    height: "85px",
-    position: "fixed",
-    top: y,
-    left: x,
-  };
 
   const handleEditClick = () => {
     dispatch(changeFormType("edit"));
@@ -27,8 +19,8 @@ const RightClickMenu = ({ x, y, isShow }) => {
 
   const handleDelete = async () => {
     try {
-      await api.delete("", { data: { _id: formContentState._id } });
-      dispatch(deleteData(formContentState));
+      await api.delete("", { data: { _id: formContent._id } });
+      dispatch(deleteData(formContent));
     } catch (err) {
       console.error(err);
     }
@@ -37,7 +29,15 @@ const RightClickMenu = ({ x, y, isShow }) => {
   return (
     <>
       {isShow && (
-        <Paper sx={style}>
+        <Paper
+          sx={{
+            width: "100px",
+            height: "85px",
+            position: "fixed",
+            top: y,
+            left: x,
+          }}
+        >
           <MenuList>
             <MenuItem onClick={handleEditClick}>Edit</MenuItem>
             <MenuItem onClick={handleDelete}>Delete</MenuItem>

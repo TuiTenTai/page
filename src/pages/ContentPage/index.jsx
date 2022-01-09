@@ -1,59 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { typeSelector, statusSelector, searchSelector } from "reducers/filter";
+import { useSelector } from "react-redux";
+import { searchSelector } from "reducers/search";
 import { dataSelector, errSelector, pendingSelector } from "reducers/data";
-import { statusChange, typeChange } from "actions/filter";
+import { isResponsiveSelector } from "reducers/responsive";
 import { itemPerPage } from "constant";
 import useRightMenu from "hooks/useRightClickMenu";
+import { Loading } from "styles";
 import Container from "@mui/material/Container";
 import Breadcrumbs from "components/Breadcrumbs";
+import SearchField from "components/SearchField";
 import AddNewAction from "components/AddNewAction";
 import FormModal from "components/FormModal";
-import { Loading } from "styles";
 import { CardContainer } from "styles/Card";
 import Card from "components/Card";
 import RightClickMenu from "components/RightClickMenu";
 import Pagination from "components/Pagination";
-import ErrorPage from "pages/ErrorPage";
+import Error400 from "pages/ErrorPage/400Error";
 
 const ContentPage = ({ type, status }) => {
-  const isPendingState = useSelector(pendingSelector);
-  const errMessState = useSelector(errSelector);
-  const dataState = useSelector(dataSelector);
-  const typeState = useSelector(typeSelector);
-  const statusState = useSelector(statusSelector);
-  const searchFilterState = useSelector(searchSelector);
+  const isPending = useSelector(pendingSelector);
+  const errMess = useSelector(errSelector);
+  const data = useSelector(dataSelector);
+  const search = useSelector(searchSelector);
+  const isResponsive = useSelector(isResponsiveSelector);
   const [x, y, isShowMenu] = useRightMenu();
-  const dispatch = useDispatch();
 
   const [pageCount, setPageCount] = useState(1);
   const indexOfLastItem = pageCount * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
 
-  useEffect(() => {
-    dispatch(typeChange(type));
-    dispatch(statusChange(status));
-  }, [status, dispatch, type]);
+  if (isPending) return <Loading size={50} />;
+  if (errMess !== null) return <Error400 />;
 
-  if (isPendingState) return <Loading size={50} />;
-  if (errMessState !== null) return <ErrorPage errMess="400: Bad Request" />;
+  const filterData = data
+    .filter((item) => item.type === type)
+    .filter((item) => status === "all" || item.status === status)
+    .filter((item) => item.name.toLowerCase().includes(search));
 
-  const filterData = dataState
-    .filter((item) => item.type === typeState)
-    .filter((item) => statusState === "all" || item.status === statusState)
-    .filter((item) => item.name.toLowerCase().includes(searchFilterState));
+  const pageData = filterData.slice(indexOfFirstItem, indexOfLastItem);
+  const pageNumber = Math.floor(filterData.length / itemPerPage) + 1;
 
   return (
     <Container maxWidth="lg">
-      <Breadcrumbs />
-      <CardContainer>
-        {filterData.slice(indexOfFirstItem, indexOfLastItem).map((item) => (
-          <Card key={item._id} content={item} />
-        ))}
-      </CardContainer>
-      <Pagination list={filterData} setPageCount={setPageCount} />
-      <RightClickMenu x={x} y={y} isShow={isShowMenu} />
+      <Breadcrumbs type={type} status={status} />
+      {isResponsive && (
+        <SearchField fullWidth style={{ marginBottom: "10px" }} />
+      )}
+
+      {pageData.length !== 0 ? (
+        <>
+          <CardContainer>
+            {pageData.map((item) => (
+              <Card key={item._id} content={item} />
+            ))}
+          </CardContainer>
+          <Pagination count={pageNumber} setPageCount={setPageCount} />
+          <RightClickMenu x={x} y={y} isShow={isShowMenu} />
+        </>
+      ) : (
+        <center>No match found</center>
+      )}
+
       <AddNewAction />
       <FormModal />
       <Outlet />

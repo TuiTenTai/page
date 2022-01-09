@@ -6,6 +6,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Gabriela from "fonts/Gabriela.ttf";
 import Lora from "fonts/Lora.ttf";
 import Roboto from "fonts/Roboto.ttf";
+import HackedKerX from "fonts/Hacked-KerX.ttf";
 
 export const AppBar = MuiStyled(MuiAppBar)`
   background: transparent !important;
@@ -42,6 +43,11 @@ export default createGlobalStyle`
   @font-face {
     font-family: 'Roboto';
     src: url(${Roboto});
+  }
+
+  @font-face {
+    font-family: 'Hacked-KerX';
+    src: url(${HackedKerX});
   }
 
   * {

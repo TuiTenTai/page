@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import MuiTextField from "@mui/material/TextField";
 import MuiSelect from "@mui/material/Select";
+import MuiButton from "@mui/material/Button";
 
 /* Container */
 export const ModalBox = styled(Box)`
@@ -64,4 +65,15 @@ export const ModalButtonGroup = styled("div")`
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
+`;
+
+/* Modal Button */
+export const Button = styled(MuiButton)`
+  background-color: ${(props) => props.bgcolor || "blue"};
+  border-radius: 0;
+  box-shadow: 0;
+
+  &:hover {
+    background-color: ${(props) => props.bgcolor || "blue"};
+  }
 `;

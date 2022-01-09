@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import dataReducer from "./data";
-import filterReducer from "./filter";
+import searchReducer from "./search";
 import formReducer from "./form";
 import isResponsiveReducer from "./responsive";
 
 const rootReducer = combineReducers({
   data: dataReducer,
-  filter: filterReducer,
+  search: searchReducer,
   form: formReducer,
   isResponsive: isResponsiveReducer,
 });

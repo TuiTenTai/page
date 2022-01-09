@@ -8,7 +8,7 @@ import GlobalStyle from "styles";
 import HomePage from "pages/HomePage";
 import TopBar from "components/TopBar";
 import ContentPage from "pages/ContentPage";
-import ErrorPage from "pages/ErrorPage";
+import Error404 from "pages/ErrorPage/404Error";
 import SlideBar from "components/SlideBar";
 
 const App = () => {
@@ -57,7 +57,7 @@ const App = () => {
           element={
             <>
               <SlideBar />
-              <ErrorPage errMess="404: Not Found" />
+              <Error404 />
             </>
           }
         />

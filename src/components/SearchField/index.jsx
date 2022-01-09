@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchSelector } from "reducers/filter";
-import { searchChange } from "actions/filter";
+import { searchSelector } from "reducers/search";
+import { searchChange } from "actions/search";
 import { Search } from "styles/Search";
 
-const SearchField = ({ fullWidth = false }) => {
-  const searchFilterState = useSelector(searchSelector);
+const SearchField = ({ fullWidth = false, style }) => {
+  const searchState = useSelector(searchSelector);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -19,10 +19,11 @@ const SearchField = ({ fullWidth = false }) => {
       size="small"
       variant="outlined"
       placeholder="Search..."
-      defaultValue={searchFilterState}
+      defaultValue={searchState}
       fullWidth={fullWidth}
       onChange={handleChange}
-      sx={!fullWidth ? { width: "20rem" } : {}}
+      sx={!fullWidth ? { width: "20rem" } : { width: "100%" }}
+      style={style}
     />
   );
 };
