@@ -1,12 +1,20 @@
-import React from "react";
+import React, { createRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchSelector } from "reducers/filter";
-import { searchChange } from "actions/filter";
+import { useLocation } from "react-router-dom";
+import { searchSelector } from "reducers/search";
+import { searchChangeValue, resetSearchValue } from "actions/search";
 import { Search } from "styles/Search";
 
 const SearchField = ({ fullWidth = false, style }) => {
   const search = useSelector(searchSelector);
+  const searchRef = createRef();
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    searchRef.current.firstChild.firstChild.value = "";
+    dispatch(resetSearchValue());
+  }, [pathname]); // eslint-disable-line
 
   const handleFocus = (e) => {
     e.target.select();
@@ -14,11 +22,12 @@ const SearchField = ({ fullWidth = false, style }) => {
 
   const handleChange = (e) => {
     const value = e.target.value.toLowerCase();
-    dispatch(searchChange(value));
+    dispatch(searchChangeValue(value));
   };
 
   return (
     <Search
+      ref={searchRef}
       type="search"
       size="small"
       variant="outlined"
