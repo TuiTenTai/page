@@ -2,7 +2,7 @@ import React from "react";
 import { PaginationBox, PaginationBar } from "styles/Pagination";
 
 const Pagination = ({ count, setPageCount }) => {
-  const handleChange = (e, value) => {
+  const handlePageChange = (e, value) => {
     setPageCount(value);
   };
 
@@ -11,7 +11,7 @@ const Pagination = ({ count, setPageCount }) => {
       <PaginationBar
         variant="outlined"
         count={count}
-        onChange={handleChange}
+        onChange={handlePageChange}
         showFirstButton
         showLastButton
       />

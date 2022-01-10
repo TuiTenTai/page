@@ -5,8 +5,12 @@ import { searchChange } from "actions/search";
 import { Search } from "styles/Search";
 
 const SearchField = ({ fullWidth = false, style }) => {
-  const searchState = useSelector(searchSelector);
+  const search = useSelector(searchSelector);
   const dispatch = useDispatch();
+
+  const handleFocus = (e) => {
+    e.target.select();
+  };
 
   const handleChange = (e) => {
     const value = e.target.value.toLowerCase();
@@ -19,9 +23,10 @@ const SearchField = ({ fullWidth = false, style }) => {
       size="small"
       variant="outlined"
       placeholder="Search..."
-      defaultValue={searchState}
+      defaultValue={search}
       fullWidth={fullWidth}
       onChange={handleChange}
+      onFocus={handleFocus}
       sx={!fullWidth ? { width: "20rem" } : { width: "100%" }}
       style={style}
     />
