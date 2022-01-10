@@ -1,17 +1,24 @@
+import {
+  formReverseIsShowValue,
+  formChangeType,
+  formChangeContentValue,
+  fromResetContentValue,
+} from "reducers/form";
+
 export const reverseIsShowValue = () => ({
-  type: "form/reverseIsShowValue",
+  type: formReverseIsShowValue,
 });
 
 export const changeFormType = (type) => ({
-  type: "form/changeFormType",
+  type: formChangeType,
   payload: type,
 });
 
 export const changeContentValue = (data) => ({
-  type: "form/changeContentValue",
+  type: formChangeContentValue,
   payload: data,
 });
 
 export const resetContentValue = () => ({
-  type: "form/resetContentValue",
+  type: fromResetContentValue,
 });

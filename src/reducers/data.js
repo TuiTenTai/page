@@ -4,9 +4,15 @@ const initState = {
   err: null,
 };
 
+export const dataFetchSuccess = "data/Fetch_success";
+export const dataFetchFail = "data/Fetch_fail";
+export const dataAddNew = "data/Add";
+export const dataUpdate = "data/Update";
+export const dataDelete = "data/Delete";
+
 const dataReducer = (state = initState, action) => {
   switch (action.type) {
-    case "data/Fetch_success": {
+    case dataFetchSuccess: {
       return {
         ...state,
         data: action.payload,
@@ -14,7 +20,7 @@ const dataReducer = (state = initState, action) => {
       };
     }
 
-    case "data/Fetch_fail": {
+    case dataFetchFail: {
       return {
         ...state,
         pending: false,
@@ -22,14 +28,14 @@ const dataReducer = (state = initState, action) => {
       };
     }
 
-    case "data/Add": {
+    case dataAddNew: {
       return {
         ...state,
         data: [action.payload, ...state.data],
       };
     }
 
-    case "data/Update": {
+    case dataUpdate: {
       const cloneData = [...state.data];
       const oldDataIndex = cloneData.indexOf(
         cloneData.filter((item) => item._id === action.payload._id)[0]
@@ -41,7 +47,7 @@ const dataReducer = (state = initState, action) => {
       };
     }
 
-    case "data/Delete": {
+    case dataDelete: {
       const cloneData = [...state.data];
       const oldDataIndex = cloneData.indexOf(
         cloneData.filter((item) => item._id === action.payload._id)[0]
@@ -58,7 +64,6 @@ const dataReducer = (state = initState, action) => {
   }
 };
 
-// Selector
 export const dataSelector = (state) => state.data.data;
 export const pendingSelector = (state) => state.data.pending;
 export const errSelector = (state) => state.data.err;

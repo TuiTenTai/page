@@ -1,3 +1,5 @@
+import { isResponsiveChangeValue } from "reducers/responsive";
+
 export const changeIsResponsiveValue = () => ({
-  type: "isResponsive/ChangeValue",
+  type: isResponsiveChangeValue,
 });

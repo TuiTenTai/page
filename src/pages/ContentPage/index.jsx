@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { searchSelector } from "reducers/search";
+import React, { useEffect } from "react";
+import { useLocation, Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { pageCountSelector, searchSelector } from "reducers/filter";
 import { dataSelector, errSelector, pendingSelector } from "reducers/data";
 import { isResponsiveSelector } from "reducers/responsive";
 import { itemPerPage } from "constant";
 import useRightMenu from "hooks/useRightClickMenu";
+import { pageCountChange } from "actions/filter";
 import { Loading } from "styles";
 import Container from "@mui/material/Container";
 import Breadcrumbs from "components/Breadcrumbs";
@@ -24,9 +25,15 @@ const ContentPage = ({ type, status }) => {
   const data = useSelector(dataSelector);
   const search = useSelector(searchSelector);
   const isResponsive = useSelector(isResponsiveSelector);
+  const pageCount = useSelector(pageCountSelector);
   const [x, y, isShowMenu] = useRightMenu();
+  const { pathname } = useLocation();
+  const dispatch = useDispatch();
 
-  const [pageCount, setPageCount] = useState(1);
+  useEffect(() => {
+    dispatch(pageCountChange(1));
+  }, [dispatch, pathname]);
+
   const indexOfLastItem = pageCount * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
 
@@ -55,7 +62,7 @@ const ContentPage = ({ type, status }) => {
               <Card key={item._id} content={item} />
             ))}
           </CardContainer>
-          <Pagination count={pageNumber} setPageCount={setPageCount} />
+          <Pagination count={pageNumber} />
           <RightClickMenu x={x} y={y} isShow={isShowMenu} />
         </>
       ) : (

@@ -11,23 +11,28 @@ const initState = {
   },
 };
 
+export const formReverseIsShowValue = "form/reverseIsShowValue";
+export const formChangeType = "form/changeType";
+export const formChangeContentValue = "form/changeContentValue";
+export const fromResetContentValue = "form/resetContentValue";
+
 const formReducer = (state = initState, action) => {
   switch (action.type) {
-    case "form/reverseIsShowValue": {
+    case formReverseIsShowValue: {
       return {
         ...state,
         isShow: !state.isShow,
       };
     }
 
-    case "form/changeFormType": {
+    case formChangeType: {
       return {
         ...state,
         type: action.payload,
       };
     }
 
-    case "form/changeContentValue": {
+    case formChangeContentValue: {
       const newContentValue = action.payload;
 
       return {
@@ -43,7 +48,7 @@ const formReducer = (state = initState, action) => {
       };
     }
 
-    case "form/resetContentValue": {
+    case fromResetContentValue: {
       return {
         ...state,
         content: initState.content,
@@ -55,7 +60,6 @@ const formReducer = (state = initState, action) => {
   }
 };
 
-// Selector
 export const isFormShowSelector = (state) => state.form.isShow;
 export const formTypeSelector = (state) => state.form.type;
 export const formContentSelector = (state) => state.form.content;

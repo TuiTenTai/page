@@ -1,29 +1,32 @@
+import {
+  dataFetchSuccess,
+  dataFetchFail,
+  dataAddNew,
+  dataUpdate,
+  dataDelete,
+} from "reducers/data";
+
 export const fetchApiSuccess = (data) => ({
-  type: "data/Fetch_success",
+  type: dataFetchSuccess,
   payload: data,
 });
 
 export const fetchApiFail = (err) => ({
-  type: "data/Fetch_fail",
+  type: dataFetchFail,
   error: err,
 });
 
-export const changeSelectedData = (data) => ({
-  type: "data/changeSelectedData",
-  payload: data,
-});
-
 export const addData = (data) => ({
-  type: "data/Add",
+  type: dataAddNew,
   payload: data,
 });
 
 export const updateData = (data) => ({
-  type: "data/Update",
+  type: dataUpdate,
   payload: data,
 });
 
 export const deleteData = (data) => ({
-  type: "data/Delete",
+  type: dataDelete,
   payload: data,
 });

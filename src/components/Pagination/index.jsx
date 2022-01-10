@@ -1,9 +1,13 @@
+import { pageCountChange } from "actions/filter";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { PaginationBox, PaginationBar } from "styles/Pagination";
 
-const Pagination = ({ count, setPageCount }) => {
+const Pagination = ({ count }) => {
+  const dispatch = useDispatch();
+
   const handlePageChange = (e, value) => {
-    setPageCount(value);
+    dispatch(pageCountChange(value));
   };
 
   return (

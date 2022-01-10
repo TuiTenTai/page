@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchSelector } from "reducers/search";
-import { searchChange } from "actions/search";
+import { searchSelector } from "reducers/filter";
+import { searchChange } from "actions/filter";
 import { Search } from "styles/Search";
 
 const SearchField = ({ fullWidth = false, style }) => {
