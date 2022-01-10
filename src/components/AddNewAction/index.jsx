@@ -18,7 +18,7 @@ const AddNewAction = () => {
   };
 
   return (
-    <Fab bgcolor="#c41b1b" onClick={handleClick}>
+    <Fab aria-label="Add new button" bgcolor="#c41b1b" onClick={handleClick}>
       <AddIcon />
     </Fab>
   );

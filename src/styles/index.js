@@ -60,7 +60,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: #0f0f0f;
+    background-color: #292929;
   }
 
   #app-root {

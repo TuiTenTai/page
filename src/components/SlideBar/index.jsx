@@ -28,7 +28,11 @@ const SlideBar = () => {
     <>
       {isResponsive && (
         <>
-          <BarOpenButton size="large" onClick={handleClick}>
+          <BarOpenButton
+            aria-label="Open slide bar"
+            size="large"
+            onClick={handleClick}
+          >
             <MenuIcon fontSize="inherit" />
           </BarOpenButton>
           <Bar anchor="left" open={isOpen} onClose={handleClick}>
