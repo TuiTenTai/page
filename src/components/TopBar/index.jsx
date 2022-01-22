@@ -12,7 +12,7 @@ const TopBar = () => {
   return (
     <>
       {!isResponsive && (
-        <AppBar>
+        <AppBar sx={{ zIndex: 2 }}>
           <TopBarContainer>
             <ButtonGroup>
               {barAction.map((item) => (

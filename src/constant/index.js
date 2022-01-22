@@ -6,6 +6,16 @@ import BookIcon from "@mui/icons-material/Book";
 export const statusList = ["viewing", "later", "viewed"];
 export const typeList = ["anime", "manga", "novel"];
 export const itemPerPage = 28;
+
+export const homePageDisplayText = [
+  "My Anime List",
+  1500,
+  "My Manga List",
+  1500,
+  "My Lightnovel List",
+  1500,
+];
+
 export const barAction = [
   {
     to: "/",

@@ -35,7 +35,7 @@ const ContentPage = ({ type, status }) => {
   const indexOfLastItem = currentPage * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
 
-  if (isPending) return <Loading size={50} />;
+  if (isPending) return <Loading />;
   if (errMess !== null) return <Error400 />;
 
   const filterData = data
@@ -44,7 +44,7 @@ const ContentPage = ({ type, status }) => {
     .filter((item) => item.name.toLowerCase().includes(search));
 
   const pageData = filterData.slice(indexOfFirstItem, indexOfLastItem);
-  const pageNumber = Math.floor(filterData.length / itemPerPage) + 1;
+  const pageNumber = Math.ceil(filterData.length / itemPerPage);
 
   return (
     <Container maxWidth="lg">

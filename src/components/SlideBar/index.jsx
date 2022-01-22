@@ -24,30 +24,27 @@ const SlideBar = () => {
     setIsOpen(!isOpen);
   };
 
+  if (!isResponsive) return <></>;
   return (
     <>
-      {isResponsive && (
-        <>
-          <BarOpenButton
-            aria-label="Open slide bar"
-            size="large"
-            onClick={handleClick}
-          >
-            <MenuIcon fontSize="inherit" />
-          </BarOpenButton>
-          <Bar anchor="left" open={isOpen} onClose={handleClick}>
-            <List sx={{ width: "10rem" }}>
-              {barAction.map((item) => (
-                <SlideButton
-                  key={item.text}
-                  content={item}
-                  handleClick={handleClick}
-                />
-              ))}
-            </List>
-          </Bar>
-        </>
-      )}
+      <BarOpenButton
+        aria-label="Open slide bar"
+        size="large"
+        onClick={handleClick}
+      >
+        <MenuIcon fontSize="inherit" />
+      </BarOpenButton>
+      <Bar anchor="left" open={isOpen} onClose={handleClick}>
+        <List sx={{ width: "10rem" }}>
+          {barAction.map((item) => (
+            <SlideButton
+              key={item.text}
+              content={item}
+              handleClick={handleClick}
+            />
+          ))}
+        </List>
+      </Bar>
     </>
   );
 };

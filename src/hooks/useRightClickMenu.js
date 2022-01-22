@@ -18,26 +18,18 @@ const useRightMenu = () => {
   const handleContextMenu = useCallback(
     (e) => {
       try {
-        if (e.target.closest(".MuiLink-root")) {
+        const cardElement = e.target.closest(".card-name");
+        if (cardElement) {
           e.preventDefault();
           setX(e.pageX + 100 > window.innerWidth ? e.pageX - 100 : e.pageX);
           setY(e.pageY + 85 > window.innerHeight ? e.pageY - 75 : e.pageY);
           setIsShow(true);
 
-          const itemName = e.target.closest(".card-name").innerText;
+          const itemName = cardElement.innerText;
           const itemData = dataState.filter(
             (item) => item.name === itemName
           )[0];
-          dispatch(
-            changeContentValue({
-              _id: itemData._id,
-              name: itemData.name,
-              link: itemData.link,
-              img: itemData.img,
-              type: itemData.type,
-              status: itemData.status,
-            })
-          );
+          dispatch(changeContentValue(itemData));
         }
       } catch (err) {
         console.error(err);

@@ -12,7 +12,6 @@ import Error404 from "pages/ErrorPage/404Error";
 import SlideBar from "components/SlideBar";
 
 const App = () => {
-  // Get API
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchApi = async () => {

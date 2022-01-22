@@ -2,11 +2,11 @@ import styled, { createGlobalStyle } from "styled-components";
 import { styled as MuiStyled } from "@mui/system";
 import MuiAppBar from "@mui/material/AppBar";
 import { Link as RouterLink } from "react-router-dom";
-import CircularProgress from "@mui/material/CircularProgress";
 import Gabriela from "fonts/Gabriela.ttf";
 import Lora from "fonts/Lora.ttf";
 import Roboto from "fonts/Roboto.ttf";
 import HackedKerX from "fonts/Hacked-KerX.ttf";
+import Maxwell from "fonts/Maxwell.ttf";
 
 export const AppBar = MuiStyled(MuiAppBar)`
   background: transparent !important;
@@ -22,11 +22,27 @@ export const Link = styled(RouterLink)`
   text-decoration: none;
 `;
 
-export const Loading = styled(CircularProgress)`
-  position: absolute;
+export const Loading = styled("div")`
+  border: 8px solid #ccc;
+  border-top: 8px solid #3d3d3d;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: -50px;
+  margin-left: -30px;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export default createGlobalStyle`
@@ -48,6 +64,11 @@ export default createGlobalStyle`
   @font-face {
     font-family: 'Hacked-KerX';
     src: url(${HackedKerX});
+  }
+
+  @font-face {
+    font-family: 'Maxwell';
+    src: url(${Maxwell});
   }
 
   * {
