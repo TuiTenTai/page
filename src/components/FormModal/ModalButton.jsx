@@ -33,8 +33,8 @@ const ModalButton = ({ children, bgcolor, handleClose }) => {
     const type = e.target.innerText;
     if (type === "CANCEL") handleClose();
     else if (
-      formContent.name !== "" ||
-      formContent.link !== "" ||
+      formContent.name !== "" &&
+      formContent.link !== "" &&
       formContent.img !== ""
     ) {
       switch (type) {
