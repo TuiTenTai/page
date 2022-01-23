@@ -32,7 +32,6 @@ const RightClickMenu = ({ x, y, isShow }) => {
         <Paper
           sx={{
             width: "100px",
-            height: "85px",
             position: "fixed",
             top: y,
             left: x,

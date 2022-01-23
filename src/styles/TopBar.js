@@ -35,10 +35,10 @@ export const DropMenu = styled(({ className, ...props }) => (
   <Tooltip {...props} componentsProps={{ tooltip: { className: className } }} />
 ))`
   .MuiTooltip-arrow {
-    color: #dee2e6;
+    color: #3b3b3b;
   }
 
-  background-color: #dee2e6;
+  background-color: #3b3b3b;
 `;
 
 export const DropButton = styled(Button)`

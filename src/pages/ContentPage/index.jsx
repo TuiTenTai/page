@@ -12,7 +12,7 @@ import Breadcrumbs from "components/Breadcrumbs";
 import SearchField from "components/SearchField";
 import AddNewAction from "components/AddNewAction";
 import FormModal from "components/FormModal";
-import { CardContainer } from "styles/Card";
+import { CardsContainer } from "styles/Card";
 import Card from "components/Card";
 import RightClickMenu from "components/RightClickMenu";
 import Pagination from "components/Pagination";
@@ -55,11 +55,11 @@ const ContentPage = ({ type, status }) => {
 
       {pageData.length !== 0 ? (
         <>
-          <CardContainer>
+          <CardsContainer>
             {pageData.map((item) => (
               <Card key={item._id} content={item} />
             ))}
-          </CardContainer>
+          </CardsContainer>
           <Pagination count={pageNumber} setCurrentPage={setCurrentPage} />
           <RightClickMenu x={x} y={y} isShow={isShowMenu} />
         </>

@@ -1,30 +1,34 @@
-import React from "react";
-import MuiCard from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
+import React, { useState } from "react";
 import Link from "@mui/material/Link";
-import CardMedia from "@mui/material/CardMedia";
-import CardTitle from "./CardTitle";
+import Skeleton from "@mui/material/Skeleton";
+import { Container, CardMedia, Title, TitleContainer } from "styles/Card";
 
 const Card = ({ content }) => {
+  const [IsLoad, setIsLoad] = useState(true);
+
+  const handleLoaded = () => {
+    setIsLoad(false);
+  };
+
   return (
-    <MuiCard
-      sx={{
-        height: "min-content",
-        boxShadow: "0 5px 5px 0 rgba(0, 0, 0, 0.2)",
-      }}
-    >
-      <CardActionArea>
-        <Link href={content.link} target="_blank" rel="noreferrer">
-          <CardMedia
-            component="img"
-            image={content.img}
-            alt={content.name}
-            loading="lazy"
-          />
-          <CardTitle title={content.name} />
-        </Link>
-      </CardActionArea>
-    </MuiCard>
+    <Container>
+      <Link href={content.link} target="_blank" rel="noreferrer">
+        {IsLoad && (
+          <Skeleton variant="rectangular" height="14rem" animation="wave" />
+        )}
+        <CardMedia
+          className="card-media"
+          component="img"
+          image={content.img}
+          alt=""
+          onLoad={handleLoaded}
+          sx={{ display: IsLoad ? "none" : "block" }}
+        />
+        <TitleContainer className="card-name">
+          <Title>{content.name}</Title>
+        </TitleContainer>
+      </Link>
+    </Container>
   );
 };
 
