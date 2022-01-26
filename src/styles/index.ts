@@ -22,29 +22,6 @@ export const Link = styled(RouterLink)`
   text-decoration: none;
 `;
 
-export const Loading = styled('div')`
-  border: 8px solid #ccc;
-  border-top: 8px solid #3d3d3d;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  animation: spin 1s linear infinite;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -40px;
-  margin-left: -40px;
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
 export default createGlobalStyle`
   @font-face {
     font-family: 'Gabriela';

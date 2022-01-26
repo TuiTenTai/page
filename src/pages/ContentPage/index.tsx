@@ -6,7 +6,7 @@ import { searchSelector } from 'state/reducers/search';
 import { isResponsiveSelector } from 'state/reducers/responsive';
 import { ITEM_PER_PAGE } from 'constant';
 import useRightClick from 'hooks/useRightClick';
-import { Loading } from 'styles';
+import Loading from 'components/Loading';
 import Container from '@mui/material/Container';
 import Breadcrumbs from 'components/Breadcrumbs';
 import SearchField from 'components/SearchField';
