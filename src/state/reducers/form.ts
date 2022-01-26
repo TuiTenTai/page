@@ -57,7 +57,7 @@ const formReducer = (state: FormState = initState, action: Action): FormState =>
 };
 
 export const isFormShowSelector = (state: RootState): boolean => state.form.show;
-export const formTypeSelector = (state: RootState): string => state.form.type;
+export const formTypeSelector = (state: RootState): 'add' | 'edit' => state.form.type;
 export const formContentSelector = (state: RootState): Data => state.form.content;
 
 export default formReducer;
