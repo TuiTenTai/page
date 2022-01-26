@@ -3,10 +3,10 @@ import TheatersIcon from '@mui/icons-material/Theaters';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import BookIcon from '@mui/icons-material/Book';
 
-export const statusList: string[] = ['viewing', 'later', 'viewed'];
-export const typeList: string[] = ['anime', 'manga', 'novel'];
-export const itemPerPage: number = 28;
-export const homePageDisplayText: (string | number)[] = [
+export const STATUS_LIST: string[] = ['viewing', 'later', 'viewed'];
+export const TYPE_LIST: string[] = ['anime', 'manga', 'novel'];
+export const ITEM_PER_PAGE: number = 28;
+export const HOME_PAGE_DISPLAY_TITLE: (string | number)[] = [
   'My Anime List',
   1500,
   'My Manga List',
@@ -20,7 +20,7 @@ export interface BarAction {
   icon: JSX.Element;
   text: string;
 }
-export const barActions: BarAction[] = [
+export const BAR_ACTIONS: BarAction[] = [
   {
     to: '/',
     icon: <HomeIcon />,

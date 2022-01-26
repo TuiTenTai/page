@@ -22,7 +22,7 @@ export const Container = styled(Card)`
 
   &:hover div.card-name {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   &:hover img.card-media {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { statusList } from 'constant';
+import { STATUS_LIST } from 'constant';
 import { capitalize } from '@mui/material';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -19,7 +19,7 @@ const ButtonList: React.FC<ButtonListProps> = ({ type, handleClick }) => {
           <ListItemText primary='All' sx={{ textAlign: 'center' }} />
         </ListItemButton>
       </Link>
-      {statusList.map((status) => (
+      {STATUS_LIST.map((status) => (
         <Link to={`/${type}/${status}`} key={status}>
           <ListItemButton sx={{ pl: 4, height: '30px' }} onClick={handleClick}>
             <ListItemText primary={capitalize(status)} sx={{ textAlign: 'center' }} />

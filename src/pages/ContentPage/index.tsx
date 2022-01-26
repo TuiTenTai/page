@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { dataSelector, errSelector, pendingSelector } from 'state/reducers/data';
 import { searchSelector } from 'state/reducers/search';
 import { isResponsiveSelector } from 'state/reducers/responsive';
-import { itemPerPage } from 'constant';
+import { ITEM_PER_PAGE } from 'constant';
 import useRightClick from 'hooks/useRightClick';
 import { Loading } from 'styles';
 import Container from '@mui/material/Container';
@@ -37,8 +37,8 @@ const ContentPage: React.FC<ContentPageProps> = ({ type, status }) => {
     setCurrentPage(1);
   }, [pathname]);
 
-  const indexOfLastItem = currentPage * itemPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemPerPage;
+  const indexOfLastItem = currentPage * ITEM_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEM_PER_PAGE;
 
   if (isPending) return <Loading />;
   if (errMess !== null) return <Error400 />;
@@ -49,7 +49,7 @@ const ContentPage: React.FC<ContentPageProps> = ({ type, status }) => {
     .filter((item) => item.name.toLowerCase().includes(search));
 
   const pageData = filterData.slice(indexOfFirstItem, indexOfLastItem);
-  const pageNumber = Math.ceil(filterData.length / itemPerPage);
+  const pageNumber = Math.ceil(filterData.length / ITEM_PER_PAGE);
 
   return (
     <Container maxWidth='lg'>

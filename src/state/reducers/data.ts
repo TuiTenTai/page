@@ -1,17 +1,17 @@
 import { Data, Action, ActionType } from 'state/action-types/data';
 import { RootState } from '.';
 
-const initState = {
-  pending: true,
-  data: [],
-  err: null,
-};
-
 export interface DataState {
   pending: boolean;
   data: Data[];
   err: unknown;
 }
+
+const initState: DataState = {
+  pending: true,
+  data: [],
+  err: null,
+};
 
 const dataReducer = (state: DataState = initState, action: Action): DataState => {
   switch (action.type) {

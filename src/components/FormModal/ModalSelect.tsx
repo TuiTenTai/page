@@ -10,18 +10,26 @@ import MenuItem from '@mui/material/MenuItem';
 import { Select } from 'styles/FormModal';
 
 interface ModalSelectProps {
-  type: string;
+  type: 'Type' | 'Status';
   values: string[];
   defaultValue: string;
 }
 
+type Type = 'anime' | 'manga' | 'novel';
+type Status = 'viewing' | 'viewed' | 'later';
+
 const ModalSelect: React.FC<ModalSelectProps> = ({ type, values, defaultValue }) => {
   const formContent = useSelector(formContentSelector);
+  const selectType = type.toLowerCase();
   const dispatch = useDispatch();
 
   const handleChange = (e: SelectChangeEvent<unknown>): void => {
-    const newFormContent = { ...formContent };
-    newFormContent[type.toLowerCase() as keyof Data] = (e.target as HTMLInputElement).value;
+    const inputEl = e.target as HTMLInputElement;
+    const newFormContent: Data = {
+      ...formContent,
+      type: selectType === 'type' ? (inputEl.value as Type) : formContent.type,
+      status: selectType === 'status' ? (inputEl.value as Status) : formContent.status,
+    };
     dispatch(changeContentValue(newFormContent));
   };
 

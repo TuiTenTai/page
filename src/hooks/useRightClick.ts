@@ -19,16 +19,16 @@ const useRightClick = (): [number, number, boolean] => {
     (e: MouseEvent): void => {
       try {
         const cardElement = (e.target as HTMLElement).closest('.card-name');
-        if (cardElement) {
-          e.preventDefault();
-          setX(e.pageX + 100 > window.innerWidth ? e.pageX - 100 : e.pageX);
-          setY(e.pageY + 90 > window.innerHeight ? e.pageY - 90 : e.pageY);
-          setShow(true);
+        if (cardElement == null) return;
 
-          const itemName = (cardElement.firstChild as HTMLParagraphElement).innerText;
-          const itemData = data.filter((item) => item.name === itemName)[0];
-          dispatch(changeContentValue(itemData));
-        }
+        e.preventDefault();
+        setX(e.pageX + 100 > window.innerWidth ? e.pageX - 100 : e.pageX);
+        setY(e.pageY + 90 > window.innerHeight ? e.pageY - 90 : e.pageY);
+        setShow(true);
+
+        const itemName = (cardElement.firstChild as HTMLParagraphElement).innerText;
+        const itemData = data.filter((item) => item.name === itemName)[0];
+        dispatch(changeContentValue(itemData));
       } catch (err) {
         console.error(err);
       }

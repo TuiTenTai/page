@@ -5,7 +5,7 @@ export const reverseIsShowValue = (): Action => ({
   type: ActionType.REVERSESHOWVALUE,
 });
 
-export const changeFormType = (type: string): Action => ({
+export const changeFormType = (type: 'add' | 'edit'): Action => ({
   type: ActionType.CHANGETYPE,
   payload: type,
 });

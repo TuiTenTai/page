@@ -11,8 +11,8 @@ export interface Data {
   name: string;
   link: string;
   img: string;
-  type: string;
-  status: string;
+  type: 'anime' | 'manga' | 'novel';
+  status: 'viewing' | 'viewed' | 'later';
 }
 
 interface FetchSuccessAction {

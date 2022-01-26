@@ -7,7 +7,7 @@ import GlobalStyles from 'styles';
 import Topbar from './Topbar';
 import Slidebar from './Slidebar';
 import HomePage from 'pages/HomePage';
-import { statusList, typeList } from 'constant';
+import { STATUS_LIST, TYPE_LIST } from 'constant';
 import ContentPage from 'pages/ContentPage';
 import Error404 from 'pages/ErrorPage/404Error';
 
@@ -39,10 +39,10 @@ const App: React.FC = () => {
             </>
           }
         />
-        {typeList.map((type) => (
+        {TYPE_LIST.map((type) => (
           <Route path={`/${type}`} key={type}>
             <Route path='' element={<ContentPage type={type} status='all' />} />
-            {statusList.map((status) => (
+            {STATUS_LIST.map((status) => (
               <Route
                 path={status}
                 element={<ContentPage type={type} status={status} />}

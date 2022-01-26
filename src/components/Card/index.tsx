@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ content }) => {
           style={{ display: IsLoad ? 'none' : 'block' }}
         />
         <TitleContainer className='card-name'>
-          <Title>{content.name}</Title>
+          <Title align='left'>{content.name}</Title>
         </TitleContainer>
       </Link>
     </Container>

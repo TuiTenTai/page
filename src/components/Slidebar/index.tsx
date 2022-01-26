@@ -5,7 +5,7 @@ import { isResponsiveSelector } from 'state/reducers/responsive';
 import { Bar, BarOpenButton } from 'styles/SlideBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import List from '@mui/material/List';
-import { barActions } from 'constant';
+import { BAR_ACTIONS } from 'constant';
 import BarButton from './BarButton';
 
 const Slidebar: React.FC = () => {
@@ -31,7 +31,7 @@ const Slidebar: React.FC = () => {
       </BarOpenButton>
       <Bar anchor='left' open={open} onClose={handleClick}>
         <List sx={{ width: '10rem' }}>
-          {barActions.map((action) => (
+          {BAR_ACTIONS.map((action) => (
             <BarButton key={action.text} action={action} handleClick={handleClick} />
           ))}
         </List>

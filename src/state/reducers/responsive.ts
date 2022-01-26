@@ -1,8 +1,8 @@
 import { Action, ActionType } from 'state/action-types/responsive';
 import { RootState } from '.';
 
-const initState = window.innerWidth >= 600 ? false : true;
 type ResponsiveState = boolean;
+const initState: ResponsiveState = window.innerWidth >= 600 ? false : true;
 
 const isResponsiveReducer = (
   state: ResponsiveState = initState,

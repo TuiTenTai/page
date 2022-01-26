@@ -11,7 +11,7 @@ interface ModalTextFieldProps {
 
 const ModalTextField: React.FC<ModalTextFieldProps> = ({ text }) => {
   const formContent = useSelector(formContentSelector);
-  const typeInput = text !== 'Image' ? text.toLowerCase() : 'img';
+  const inputType = text !== 'Image' ? text.toLowerCase() : 'img';
   const dispatch = useDispatch();
 
   const handleFocus = (e: React.FocusEvent): void => {
@@ -19,8 +19,13 @@ const ModalTextField: React.FC<ModalTextFieldProps> = ({ text }) => {
   };
 
   const handleChange = (e: React.ChangeEvent): void => {
-    const newFormContent = { ...formContent };
-    newFormContent[typeInput as keyof Data] = (e.target as HTMLInputElement).value;
+    const inputEl = e.target as HTMLInputElement;
+    const newFormContent: Data = {
+      ...formContent,
+      name: inputType === 'name' ? inputEl.value : formContent.name,
+      link: inputType === 'link' ? inputEl.value : formContent.link,
+      img: inputType === 'img' ? inputEl.value : formContent.img,
+    };
     dispatch(changeContentValue(newFormContent));
   };
 
@@ -31,7 +36,7 @@ const ModalTextField: React.FC<ModalTextFieldProps> = ({ text }) => {
       variant='standard'
       onFocus={handleFocus}
       onChange={handleChange}
-      defaultValue={formContent[typeInput as keyof Data]}
+      defaultValue={formContent[inputType as keyof Data]}
     />
   );
 };

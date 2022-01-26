@@ -13,7 +13,7 @@ interface ReverseShowValueAction {
 
 interface ChangeTypeAction {
   type: ActionType.CHANGETYPE;
-  payload: string;
+  payload: 'add' | 'edit';
 }
 
 interface ChangeContentAction {

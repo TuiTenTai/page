@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { formContentSelector, formTypeSelector, isFormShowSelector } from 'state/reducers/form';
 import { resetContentValue, reverseIsShowValue } from 'state/action-creators/form';
-import { statusList, typeList } from 'constant';
+import { STATUS_LIST, TYPE_LIST } from 'constant';
 import Modal from '@mui/material/Modal';
 import { ModalBox, ModalTitle, ModalContentGroup, ModalButtonGroup } from 'styles/FormModal';
 import ModalSelect from './ModalSelect';
@@ -42,8 +42,8 @@ const FormModal: React.FC = () => {
           ))}
         </ModalContentGroup>
         <ModalContentGroup>
-          <ModalSelect type='Type' values={typeList} defaultValue={defaultTypeValue} />
-          <ModalSelect type='Status' values={statusList} defaultValue={defaultStatusValue} />
+          <ModalSelect type='Type' values={TYPE_LIST} defaultValue={defaultTypeValue} />
+          <ModalSelect type='Status' values={STATUS_LIST} defaultValue={defaultStatusValue} />
         </ModalContentGroup>
         <ModalButtonGroup>
           <ModalButton bgcolor='#1bc421' handleClose={onHandleClose}>

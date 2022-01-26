@@ -1,6 +1,6 @@
 import React from 'react';
 import { capitalize } from '@mui/material';
-import { statusList } from 'constant';
+import { STATUS_LIST } from 'constant';
 import { DropBox, DropButton, DropLink } from 'styles/TopBar';
 
 interface DropItemProps {
@@ -26,7 +26,7 @@ interface DropProps {
 const Drop: React.FC<DropProps> = ({ type }) => {
   return (
     <DropBox>
-      {statusList.map((status) => (
+      {STATUS_LIST.map((status) => (
         <DropItem type={type} status={status} key={status} />
       ))}
     </DropBox>

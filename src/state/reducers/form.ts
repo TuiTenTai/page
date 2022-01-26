@@ -2,7 +2,13 @@ import { Data } from 'state/action-types/data';
 import { Action, ActionType } from 'state/action-types/form';
 import { RootState } from '.';
 
-const initState = {
+export interface FormState {
+  show: boolean;
+  type: 'add' | 'edit';
+  content: Data;
+}
+
+const initState: FormState = {
   show: false,
   type: 'add',
   content: {
@@ -14,12 +20,6 @@ const initState = {
     status: 'later',
   },
 };
-
-export interface FormState {
-  show: boolean;
-  type: string;
-  content: Data;
-}
 
 const formReducer = (state: FormState = initState, action: Action): FormState => {
   switch (action.type) {
