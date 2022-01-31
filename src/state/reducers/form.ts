@@ -15,7 +15,7 @@ const initState: FormState = {
     _id: '',
     name: '',
     link: '',
-    img: '',
+    imageUrl: '',
     type: 'anime',
     status: 'later',
   },

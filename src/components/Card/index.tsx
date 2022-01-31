@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ content }) => {
         {IsLoad && <Skeleton variant='rectangular' height='14rem' animation='wave' />}
         <CardMedia
           className='card-media'
-          src={content.img}
+          src={content.imageUrl}
           alt=''
           onLoad={handleLoaded}
           style={{ display: IsLoad ? 'none' : 'block' }}

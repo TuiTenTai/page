@@ -1,11 +1,11 @@
 import React from 'react';
-import Slidebar from 'components/Slidebar';
+import Sidebar from 'components/Sidebar';
 import { ErrorContent, ErrorMess, ErrorType } from 'styles/ErrorPage';
 
 const Error400: React.FC = () => {
   return (
     <>
-      <Slidebar />
+      <Sidebar />
       <ErrorContent>
         <ErrorType>400</ErrorType>
         <ErrorMess>BAD REQUEST</ErrorMess>

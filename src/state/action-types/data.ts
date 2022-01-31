@@ -10,8 +10,8 @@ export interface Data {
   _id: string;
   name: string;
   link: string;
-  img: string;
-  type: 'anime' | 'manga' | 'novel';
+  imageUrl: string;
+  type: 'anime' | 'manga' | 'lightnovel';
   status: 'viewing' | 'viewed' | 'later';
 }
 

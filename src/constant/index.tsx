@@ -4,7 +4,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import BookIcon from '@mui/icons-material/Book';
 
 export const STATUS_LIST: string[] = ['viewing', 'later', 'viewed'];
-export const TYPE_LIST: string[] = ['anime', 'manga', 'novel'];
+export const TYPE_LIST: string[] = ['anime', 'manga', 'lightnovel'];
 export const ITEM_PER_PAGE: number = 28;
 export const HOME_PAGE_DISPLAY_TITLE: (string | number)[] = [
   'My Anime List',
@@ -39,6 +39,6 @@ export const BAR_ACTIONS: BarAction[] = [
   {
     to: '/novel',
     icon: <BookIcon />,
-    text: 'Novel',
+    text: 'Lightnovel',
   },
 ];

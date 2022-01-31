@@ -5,7 +5,7 @@ import api from 'api';
 import { fetchApiFail, fetchApiSuccess } from 'state/action-creators/data';
 import GlobalStyles from 'styles';
 import Topbar from './Topbar';
-import Slidebar from './Slidebar';
+import Sidebar from './Sidebar';
 import HomePage from 'pages/HomePage';
 import { STATUS_LIST, TYPE_LIST } from 'constant';
 import ContentPage from 'pages/ContentPage';
@@ -34,7 +34,7 @@ const App: React.FC = () => {
           path='/'
           element={
             <>
-              <Slidebar />
+              <Sidebar />
               <HomePage />
             </>
           }
@@ -55,7 +55,7 @@ const App: React.FC = () => {
           path='*'
           element={
             <>
-              <Slidebar />
+              <Sidebar />
               <Error404 />
             </>
           }

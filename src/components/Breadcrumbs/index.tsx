@@ -6,7 +6,7 @@ import MuiBreadcrumbs from '@mui/material/Breadcrumbs';
 import HomeIcon from '@mui/icons-material/Home';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { AppBar } from 'styles';
-import Slidebar from 'components/Slidebar';
+import Sidebar from 'components/Sidebar';
 import { BreadcrumbsLink, Toolbar } from 'styles/Breadcrumbs';
 import SearchField from 'components/SearchField';
 
@@ -34,7 +34,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ type, status }) => {
           {upCaseStatus !== 'All' && <BreadcrumbsLink to={path}>{upCaseStatus}</BreadcrumbsLink>}
         </MuiBreadcrumbs>
         {!isResponsive && <SearchField />}
-        <Slidebar />
+        <Sidebar />
       </Toolbar>
     </AppBar>
   );

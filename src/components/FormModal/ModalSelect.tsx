@@ -15,7 +15,7 @@ interface ModalSelectProps {
   defaultValue: string;
 }
 
-type Type = 'anime' | 'manga' | 'novel';
+type Type = 'anime' | 'manga' | 'lightnovel';
 type Status = 'viewing' | 'viewed' | 'later';
 
 const ModalSelect: React.FC<ModalSelectProps> = ({ type, values, defaultValue }) => {

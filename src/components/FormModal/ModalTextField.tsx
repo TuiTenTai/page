@@ -9,9 +9,11 @@ interface ModalTextFieldProps {
   text: string;
 }
 
+type InputType = 'name' | 'link' | 'imageUrl';
+
 const ModalTextField: React.FC<ModalTextFieldProps> = ({ text }) => {
   const formContent = useSelector(formContentSelector);
-  const inputType = text !== 'Image' ? text.toLowerCase() : 'img';
+  const inputType: InputType = text !== 'Image' ? (text.toLowerCase() as InputType) : 'imageUrl';
   const dispatch = useDispatch();
 
   const handleFocus = (e: React.FocusEvent): void => {
@@ -24,7 +26,7 @@ const ModalTextField: React.FC<ModalTextFieldProps> = ({ text }) => {
       ...formContent,
       name: inputType === 'name' ? inputEl.value : formContent.name,
       link: inputType === 'link' ? inputEl.value : formContent.link,
-      img: inputType === 'img' ? inputEl.value : formContent.img,
+      imageUrl: inputType === 'imageUrl' ? inputEl.value : formContent.imageUrl,
     };
     dispatch(changeContentValue(newFormContent));
   };

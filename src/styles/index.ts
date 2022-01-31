@@ -7,6 +7,7 @@ import Lora from 'fonts/Lora.ttf';
 import Roboto from 'fonts/Roboto.ttf';
 import HackedKerX from 'fonts/Hacked-KerX.ttf';
 import Maxwell from 'fonts/Maxwell.ttf';
+import BackgroundSVG from 'images/background.svg';
 
 export const AppBar = styled(MuiAppBar)`
   background: transparent !important;
@@ -58,7 +59,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: #292929;
+    background-color: #000509;
   }
 
   #app-root {
@@ -66,21 +67,14 @@ export default createGlobalStyle`
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    background-image: linear-gradient(
-      to right top, 
-      #292929, 
-      #2e2e2f, 
-      #333335, 
-      #38393b, 
-      #3d3e41, 
-      #414347, 
-      #45484d, 
-      #494d53, 
-      #4d5359, 
-      #525960, 
-      #565f66, 
-      #5a656c
-    );
+    background-image: url(${BackgroundSVG});
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+
+    @media screen and (max-width: 1279.98px) {
+      background-size: unset;
+    }
+    
   }
 
   .MuiPaper-root {
