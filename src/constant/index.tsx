@@ -37,7 +37,7 @@ export const BAR_ACTIONS: BarAction[] = [
     text: 'Manga',
   },
   {
-    to: '/novel',
+    to: '/lightnovel',
     icon: <BookIcon />,
     text: 'Lightnovel',
   },

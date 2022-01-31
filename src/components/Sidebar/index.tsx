@@ -30,7 +30,7 @@ const Slidebar: React.FC = () => {
         <MenuIcon fontSize='inherit' />
       </BarOpenButton>
       <Bar anchor='left' open={open} onClose={handleClick}>
-        <List sx={{ width: '10rem' }}>
+        <List sx={{ width: '12rem' }}>
           {BAR_ACTIONS.map((action) => (
             <BarButton key={action.text} action={action} handleClick={handleClick} />
           ))}
