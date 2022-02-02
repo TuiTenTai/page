@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeIsResponsiveValue } from 'state/action-creators/responsive';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { isResponsiveSelector } from 'state/reducers/responsive';
 import { Bar, BarOpenButton } from 'styles/SideBar';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -11,13 +10,6 @@ import BarButton from './BarButton';
 const Slidebar: React.FC = () => {
   const isReponsive = useSelector(isResponsiveSelector);
   const [open, setOpen] = useState<boolean>(false);
-  const dispatch = useDispatch();
-
-  useEffect((): void => {
-    window.addEventListener('resize', () => {
-      dispatch(changeIsResponsiveValue());
-    });
-  }, [dispatch]);
 
   const handleClick = (): void => {
     setOpen(!open);

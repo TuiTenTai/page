@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import api from 'api';
 import { fetchApiFail, fetchApiSuccess } from 'state/action-creators/data';
+import { changeIsResponsiveValue } from 'state/action-creators/responsive';
 import GlobalStyles from 'styles';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar';
@@ -13,7 +14,8 @@ import Error404 from 'pages/ErrorPage/404Error';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
+
+  useEffect((): void => {
     const fetchApi = async () => {
       try {
         const res = await api.get();
@@ -23,6 +25,18 @@ const App: React.FC = () => {
       }
     };
     fetchApi();
+  }, [dispatch]);
+
+  useEffect(() => {
+    window.addEventListener('resize', (): void => {
+      dispatch(changeIsResponsiveValue());
+    });
+
+    return (): void => {
+      window.removeEventListener('resize', (): void => {
+        dispatch(changeIsResponsiveValue());
+      });
+    };
   }, [dispatch]);
 
   return (

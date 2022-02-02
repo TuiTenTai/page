@@ -69,12 +69,7 @@ export default createGlobalStyle`
     overflow-y: auto;
     background-image: url(${BackgroundPNG});
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-    @media screen and (max-width: 1023.98px) {
-      background-size: auto 100%;
-    }
-
+    background-size: cover;
   }
 
   .MuiPaper-root {
