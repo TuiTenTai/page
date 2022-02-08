@@ -9,10 +9,11 @@ import { AppBar } from 'styles';
 import Sidebar from 'components/Sidebar';
 import { BreadcrumbsLink, Toolbar } from 'styles/Breadcrumbs';
 import SearchField from 'components/SearchField';
+import { statusInterface, typeInterface } from 'constant/interface';
 
 interface BreadcrumbsProps {
-  type: string;
-  status: string;
+  type: typeInterface;
+  status: 'all' | statusInterface;
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ type, status }) => {

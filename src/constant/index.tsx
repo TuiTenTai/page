@@ -2,9 +2,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import BookIcon from '@mui/icons-material/Book';
+import { statusInterface, typeInterface } from './interface';
 
-export const STATUS_LIST: string[] = ['viewing', 'later', 'viewed'];
-export const TYPE_LIST: string[] = ['anime', 'manga', 'lightnovel'];
+export const STATUS_LIST: statusInterface[] = ['viewing', 'later', 'viewed'];
+export const TYPE_LIST: typeInterface[] = ['anime', 'manga', 'lightnovel'];
 export const ITEM_PER_PAGE: number = 28;
 export const HOME_PAGE_DISPLAY_TITLE: (string | number)[] = [
   'My Anime List',

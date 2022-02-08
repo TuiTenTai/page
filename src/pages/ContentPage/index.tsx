@@ -17,10 +17,11 @@ import Card from 'components/Card';
 import RightClickMenu from 'components/RightClickMenu';
 import Pagination from 'components/Pagination';
 import Error400 from 'pages/ErrorPage/400Error';
+import { statusInterface, typeInterface } from 'constant/interface';
 
 interface ContentPageProps {
-  type: string;
-  status: string;
+  type: typeInterface;
+  status: 'all' | statusInterface;
 }
 
 const ContentPage: React.FC<ContentPageProps> = ({ type, status }) => {
