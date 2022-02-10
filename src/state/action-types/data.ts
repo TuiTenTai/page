@@ -1,3 +1,4 @@
+import { typeInterface, statusInterface } from 'constant/interface';
 export enum ActionType {
   FETCHSUCCES = 'data/Fetch_success',
   FETCHFAIL = 'data/Fetch_fail',
@@ -10,9 +11,9 @@ export interface Data {
   _id: string;
   name: string;
   link: string;
-  imageUrl: string;
-  type: 'anime' | 'manga' | 'lightnovel';
-  status: 'viewing' | 'viewed' | 'later';
+  imageURL: string;
+  type: typeInterface;
+  status: statusInterface;
 }
 
 interface FetchSuccessAction {

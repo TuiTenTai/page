@@ -36,7 +36,7 @@ const ModalButton: React.FC<ModalButtonProps> = ({ children, bgcolor, handleClos
   const handleClick = (e: React.MouseEvent) => {
     const type = (e.target as HTMLButtonElement).innerText;
     if (type === 'CANCEL') handleClose();
-    else if (formContent.name !== '' && formContent.link !== '' && formContent.imageUrl !== '') {
+    else if (formContent.name !== '' && formContent.link !== '' && formContent.imageURL !== '') {
       switch (type) {
         case 'ADD': {
           fetchAddNew();
