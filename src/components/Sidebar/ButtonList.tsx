@@ -1,5 +1,5 @@
 import React from 'react';
-import { STATUS_LIST } from 'constant';
+import { STATUS_LIST } from 'utils/constant';
 import { capitalize } from '@mui/material';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';

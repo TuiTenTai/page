@@ -1,6 +1,6 @@
 import React from 'react';
 import { capitalize } from '@mui/material';
-import { STATUS_LIST } from 'constant';
+import { STATUS_LIST } from 'utils/constant';
 import { DropBox, DropButton, DropLink } from 'styles/TopBar';
 
 interface DropItemProps {

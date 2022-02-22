@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { formContentSelector, formTypeSelector, isFormShowSelector } from 'state/reducers/form';
 import { resetContentValue, reverseIsShowValue } from 'state/action-creators/form';
-import { STATUS_LIST, TYPE_LIST } from 'constant';
+import { STATUS_LIST, TYPE_LIST } from 'utils/constant';
 import Modal from '@mui/material/Modal';
 import { ModalBox, ModalTitle, ModalContentGroup, ModalButtonGroup } from 'styles/FormModal';
 import ModalSelect from './ModalSelect';

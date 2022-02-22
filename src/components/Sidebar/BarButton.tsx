@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BarAction } from 'constant';
+import { BarAction } from 'utils/constant';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarAction } from 'constant';
+import { BarAction } from 'utils/constant';
 import { Link } from 'styles';
 import Tooltip from '@mui/material/Tooltip';
 import { TopButton } from 'styles/TopBar';

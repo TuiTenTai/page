@@ -4,7 +4,7 @@ import { isResponsiveSelector } from 'state/reducers/responsive';
 import { Bar, BarOpenButton } from 'styles/SideBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import List from '@mui/material/List';
-import { BAR_ACTIONS } from 'constant';
+import { BAR_ACTIONS } from 'utils/constant';
 import BarButton from './BarButton';
 
 const Slidebar: React.FC = () => {

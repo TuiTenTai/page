@@ -7,10 +7,10 @@ import { changeIsResponsiveValue } from 'state/action-creators/responsive';
 import GlobalStyles from 'styles';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar';
-import HomePage from 'pages/HomePage';
-import { STATUS_LIST, TYPE_LIST } from 'constant';
-import ContentPage from 'pages/ContentPage';
-import Error404 from 'pages/ErrorPage/404Error';
+import HomePage from 'pages';
+import { STATUS_LIST, TYPE_LIST } from 'utils/constant';
+import ContentPage from 'pages/content';
+import Error404 from 'pages/404';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();

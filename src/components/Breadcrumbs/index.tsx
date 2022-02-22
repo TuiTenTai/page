@@ -9,7 +9,7 @@ import { AppBar } from 'styles';
 import Sidebar from 'components/Sidebar';
 import { BreadcrumbsLink, Toolbar } from 'styles/Breadcrumbs';
 import SearchField from 'components/SearchField';
-import { statusInterface, typeInterface } from 'constant/interface';
+import { statusInterface, typeInterface } from 'utils/interface';
 
 interface BreadcrumbsProps {
   type: typeInterface;

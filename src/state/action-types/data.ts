@@ -1,4 +1,4 @@
-import { typeInterface, statusInterface } from 'constant/interface';
+import { typeInterface, statusInterface } from 'utils/interface';
 export enum ActionType {
   FETCHSUCCES = 'data/Fetch_success',
   FETCHFAIL = 'data/Fetch_fail',

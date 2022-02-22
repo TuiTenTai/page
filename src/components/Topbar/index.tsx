@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { isResponsiveSelector } from 'state/reducers/responsive';
-import { BAR_ACTIONS } from 'constant';
+import { BAR_ACTIONS } from 'utils/constant';
 import { AppBar } from 'styles';
 import { TopBarContainer, ButtonGroup } from 'styles/TopBar';
 import BarButton from './BarButton';
