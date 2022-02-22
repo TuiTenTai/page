@@ -11,7 +11,7 @@ const useItemPerPage = (): number => {
     if (pageWidth >= 690) return setItemPerPage(24);
     if (pageWidth >= 511) return setItemPerPage(24);
     if (pageWidth >= 348) return setItemPerPage(20);
-    return setItemPerPage(1);
+    return setItemPerPage(8);
   }, [pageWidth]);
 
   useEffect(() => {
@@ -22,9 +22,7 @@ const useItemPerPage = (): number => {
     };
   }, []);
 
-  useEffect((): void => {
-    onHandleResize();
-  }, [onHandleResize, pageWidth]);
+  useEffect(onHandleResize, [onHandleResize, pageWidth]);
 
   return itemPerPage;
 };
